@@ -2,7 +2,7 @@
   <app-sidebar #sidebar></app-sidebar>
   <main
     class="flex-1 overflow-y-auto transition-all duration-300  py-5 px-6"
-    [ngClass]="sidebar.minimized() ? 'ml-16' : 'ml-[250px]'"
+    [ngClass]="sidebar.minimized() ? 'ml-16' : 'md:ml-[250px]'"
   >
     <ng-content></ng-content>
   </main>
