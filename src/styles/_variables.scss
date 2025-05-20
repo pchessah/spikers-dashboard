@@ -1,0 +1,122 @@
+// Spikers Design Tokens
+
+// ==============================================
+// Colors
+// ==============================================
+
+// Primary Colors
+$spikers-color-green: #02983E;
+$spikers-color-red: #E5372B;
+$spikers-color-orange: #FF9500;
+$spikers-color-soft-grey: #525D73;
+
+// Neutral Colors
+$spikers-color-white: #FFFFFF;
+$spikers-color-black: #000000;
+
+// Green Shades
+$spikers-color-green-light: lighten($spikers-color-green, 10%);
+$spikers-color-green-lighter: lighten($spikers-color-green, 20%);
+$spikers-color-green-dark: darken($spikers-color-green, 10%);
+$spikers-color-green-darker: darken($spikers-color-green, 20%);
+
+// Red Shades
+$spikers-color-red-light: lighten($spikers-color-red, 10%);
+$spikers-color-red-lighter: lighten($spikers-color-red, 20%);
+$spikers-color-red-dark: darken($spikers-color-red, 10%);
+$spikers-color-red-darker: darken($spikers-color-red, 20%);
+
+// Orange Shades
+$spikers-color-orange-light: lighten($spikers-color-orange, 10%);
+$spikers-color-orange-lighter: lighten($spikers-color-orange, 20%);
+$spikers-color-orange-dark: darken($spikers-color-orange, 10%);
+$spikers-color-orange-darker: darken($spikers-color-orange, 20%);
+
+// Grey Shades
+$spikers-color-grey-100: #F8F9FA;
+$spikers-color-grey-200: #E9ECEF;
+$spikers-color-grey-300: #DEE2E6;
+$spikers-color-grey-400: #CED4DA;
+$spikers-color-grey-500: #ADB5BD;
+$spikers-color-grey-600: #6C757D;
+$spikers-color-grey-700: #495057;
+$spikers-color-grey-800: #343A40;
+$spikers-color-grey-900: #212529;
+
+// Soft Grey Shades
+$spikers-color-soft-grey-light: lighten($spikers-color-soft-grey, 10%);
+$spikers-color-soft-grey-lighter: lighten($spikers-color-soft-grey, 20%);
+$spikers-color-soft-grey-dark: darken($spikers-color-soft-grey, 10%);
+$spikers-color-soft-grey-darker: darken($spikers-color-soft-grey, 20%);
+
+// ==============================================
+// Typography
+// ==============================================
+
+$spikers-font-family-primary: 'Public Sans', sans-serif;
+
+// Font Weights
+$spikers-font-weight-light: 300;
+$spikers-font-weight-regular: 400;
+$spikers-font-weight-medium: 500;
+$spikers-font-weight-semibold: 600;
+$spikers-font-weight-bold: 700;
+
+// Font Sizes
+$spikers-font-size-xs: 0.75rem;   // 12px
+$spikers-font-size-sm: 0.875rem;  // 14px
+$spikers-font-size-base: 1rem;    // 16px
+$spikers-font-size-lg: 1.125rem;  // 18px
+$spikers-font-size-xl: 1.25rem;   // 20px
+$spikers-font-size-2xl: 1.5rem;   // 24px
+$spikers-font-size-3xl: 1.875rem; // 30px
+$spikers-font-size-4xl: 2.25rem;  // 36px
+$spikers-font-size-5xl: 3rem;     // 48px
+
+// Line Heights
+$spikers-line-height-tight: 1.25;
+$spikers-line-height-normal: 1.5;
+$spikers-line-height-loose: 1.75;
+
+// ==============================================
+// Spacing
+// ==============================================
+
+$spikers-spacing-xxs: 0.25rem;  // 4px
+$spikers-spacing-xs: 0.5rem;    // 8px
+$spikers-spacing-sm: 0.75rem;   // 12px
+$spikers-spacing-md: 1rem;      // 16px
+$spikers-spacing-lg: 1.5rem;    // 24px
+$spikers-spacing-xl: 2rem;     // 32px
+$spikers-spacing-xxl: 3rem;     // 48px
+
+// ==============================================
+// Border Radius
+// ==============================================
+
+$spikers-border-radius-sm: 0.25rem;  // 4px
+$spikers-border-radius-md: 0.5rem;   // 8px
+$spikers-border-radius-lg: 0.75rem;  // 12px
+$spikers-border-radius-xl: 1rem;     // 16px
+$spikers-border-radius-full: 9999px; // Full circle
+
+// ==============================================
+// Shadows
+// ==============================================
+
+$spikers-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$spikers-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$spikers-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$spikers-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$spikers-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+// ==============================================
+// Breakpoints
+// ==============================================
+
+$spikers-breakpoint-xs: 0;
+$spikers-breakpoint-sm: 576px;
+$spikers-breakpoint-md: 768px;
+$spikers-breakpoint-lg: 992px;
+$spikers-breakpoint-xl: 1200px;
+$spikers-breakpoint-xxl: 1400px;

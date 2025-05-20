@@ -1,0 +1,9 @@
+<div class="flex h-screen bg-gray-100">
+  <app-sidebar #sidebar></app-sidebar>
+  <main
+    class="flex-1 overflow-y-auto transition-all duration-300"
+    [ngClass]="sidebar.minimized() ? 'ml-16' : 'ml-[250px]'"
+  >
+    <ng-content></ng-content>
+  </main>
+</div>

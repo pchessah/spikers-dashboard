@@ -1,0 +1,106 @@
+@theme {
+  /* Colors */
+  --color-spikers-green: #02983E;
+  --color-spikers-red: #E5372B;
+  --color-spikers-orange: #FF9500;
+  --color-spikers-soft-grey: #525D73;
+  --color-spikers-white: #FFFFFF;
+  --color-spikers-black: #000000;
+  --color-gray-soft-700: #525D73;
+  --color-spikers-green-bg-active: #E9FAF0;
+
+  /* Green Shades */
+  --color-spikers-green-light: #1ecf5a;
+  --color-spikers-green-lighter: #3be97a;
+  --color-spikers-green-dark: #027c33;
+  --color-spikers-green-darker: #026428;
+  --color-spikers-green-active: #00481D;
+
+  /* Red Shades */
+  --color-spikers-red-light: #f05a4a;
+  --color-spikers-red-lighter: #f47c6c;
+  --color-spikers-red-dark: #b82a21;
+  --color-spikers-red-darker: #8a1f18;
+
+  /* Orange Shades */
+  --color-spikers-orange-light: #ffad33;
+  --color-spikers-orange-lighter: #ffc266;
+  --color-spikers-orange-dark: #cc7700;
+  --color-spikers-orange-darker: #995900;
+
+  /* Grey Shades */
+  --color-spikers-grey-100: #F8F9FA;
+  --color-spikers-grey-200: #E9ECEF;
+  --color-spikers-grey-300: #DEE2E6;
+  --color-spikers-grey-400: #CED4DA;
+  --color-spikers-grey-500: #ADB5BD;
+  --color-spikers-grey-600: #6C757D;
+  --color-spikers-grey-700: #495057;
+  --color-spikers-grey-800: #343A40;
+  --color-spikers-grey-900: #212529;
+  --color-gray-soft-700: #525D73;
+
+  /* Soft Grey Shades */
+  --color-spikers-soft-grey-light: #6b7891;
+  --color-spikers-soft-grey-lighter: #8a97b0;
+  --color-spikers-soft-grey-dark: #41495a;
+  --color-spikers-soft-grey-darker: #323846;
+
+  /* Green Active */
+  --color-spikers-green-active: #00481D;
+
+  /* Typography */
+  --font-spikers-primary: 'Public Sans', sans-serif;
+
+  --font-weight-spikers-light: 300;
+  --font-weight-spikers-regular: 400;
+  --font-weight-spikers-medium: 500;
+  --font-weight-spikers-semibold: 600;
+  --font-weight-spikers-bold: 700;
+
+  --text-spikers-xs: 0.75rem;
+  --text-spikers-sm: 0.875rem;
+  --text-spikers-sm2: 0.9375rem;
+  --text-spikers-base: 1rem;
+  --text-spikers-lg: 1.125rem;
+  --text-spikers-xl: 1.25rem;
+  --text-spikers-2xl: 1.5rem;
+  --text-spikers-3xl: 1.875rem;
+  --text-spikers-4xl: 2.25rem;
+  --text-spikers-5xl: 3rem;
+
+  --leading-spikers-tight: 1.25;
+  --leading-spikers-normal: 1.5;
+  --leading-spikers-loose: 1.75;
+
+  /* Spacing */
+  --spacing-spikers-xxs: 0.25rem;
+  --spacing-spikers-xs: 0.5rem;
+  --spacing-spikers-sm: 0.75rem;
+  --spacing-spikers-md: 1rem;
+  --spacing-spikers-lg: 1.5rem;
+  --spacing-spikers-xl: 2rem;
+  --spacing-spikers-xxl: 3rem;
+
+  /* Border Radius */
+  --radius-spikers-sm: 0.25rem;
+  --radius-spikers-md: 0.5rem;
+  --radius-spikers-lg: 0.75rem;
+  --radius-spikers-xl: 1rem;
+  --radius-spikers-full: 9999px;
+
+  /* Shadows */
+  --shadow-spikers-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-spikers: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-spikers-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-spikers-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-spikers-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Breakpoints */
+  --breakpoint-spikers-xs: 0;
+  --breakpoint-spikers-sm: 576px;
+  --breakpoint-spikers-md: 768px;
+  --breakpoint-spikers-lg: 992px;
+  --breakpoint-spikers-xl: 1200px;
+  --breakpoint-spikers-xxl: 1400px;
+}

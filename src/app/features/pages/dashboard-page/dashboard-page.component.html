@@ -1,0 +1,97 @@
+<div class="title">
+  <h1>{{ 'demo.title' | translate }}</h1>
+  <span>Switch languages at runtime: </span>
+  <button (click)="useLanguage('en')">en</button>
+  <button (click)="useLanguage('sw')">swa</button>
+</div>
+<div>
+  <h2>Simple translations without parameters</h2>
+
+  <p>{{ 'demo.simple.text-with-pipe' | translate }}</p>
+
+  <p [translate]="'demo.simple.text-as-attribute'"></p>
+
+  <p translate>demo.simple.text-as-content</p>
+</div>
+
+<!-- Spikers Tailwind Theme Visual Reference -->
+<div class="p-8 space-y-8">
+  <h2 class="text-2xl font-bold mb-4">Spikers Tailwind Theme Visual Reference</h2>
+
+  <!-- Colors -->
+  <div>
+    <h3 class="font-semibold mb-2">Background Colors</h3>
+    <div class="flex flex-wrap gap-4">
+      <div class="bg-spikers-green text-white p-4 rounded">bg-spikers-green</div>
+      <div class="bg-spikers-red text-white p-4 rounded">bg-spikers-red</div>
+      <div class="bg-spikers-orange text-white p-4 rounded">bg-spikers-orange</div>
+      <div class="bg-spikers-soft-grey text-white p-4 rounded">bg-spikers-soft-grey</div>
+      <div class="bg-spikers-grey-300 text-black p-4 rounded">bg-spikers-grey-300</div>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="font-semibold mb-2">Text Colors</h3>
+    <div class="space-y-2">
+      <div class="text-spikers-green">text-spikers-green</div>
+      <div class="text-spikers-red">text-spikers-red</div>
+      <div class="text-spikers-orange">text-spikers-orange</div>
+      <div class="text-spikers-soft-grey">text-spikers-soft-grey</div>
+      <div class="text-spikers-grey-700">text-spikers-grey-700</div>
+    </div>
+  </div>
+
+  <!-- Border Radius -->
+  <div>
+    <h3 class="font-semibold mb-2">Border Radius</h3>
+    <div class="flex gap-4">
+      <div class="bg-spikers-green text-white p-4 rounded-spikers-sm">rounded-spikers-sm</div>
+      <div class="bg-spikers-green text-white p-4 rounded-spikers-md">rounded-spikers-md</div>
+      <div class="bg-spikers-green text-white p-4 rounded-spikers-lg">rounded-spikers-lg</div>
+      <div class="bg-spikers-green text-white p-4 rounded-spikers-xl">rounded-spikers-xl</div>
+      <div class="bg-spikers-green text-white p-4 rounded-spikers-full">rounded-spikers-full</div>
+    </div>
+  </div>
+
+  <!-- Spacing -->
+  <div>
+    <h3 class="font-semibold mb-2">Spacing (Padding)</h3>
+    <div class="flex gap-4 items-end">
+      <div class="bg-spikers-red text-white p-spikers-xxs">p-spikers-xxs</div>
+      <div class="bg-spikers-red text-white p-spikers-xs">p-spikers-xs</div>
+      <div class="bg-spikers-red text-white p-spikers-sm">p-spikers-sm</div>
+      <div class="bg-spikers-red text-white p-spikers-md">p-spikers-md</div>
+      <div class="bg-spikers-red text-white p-spikers-lg">p-spikers-lg</div>
+      <div class="bg-spikers-red text-white p-spikers-xl">p-spikers-xl</div>
+      <div class="bg-spikers-red text-white p-spikers-xxl">p-spikers-xxl</div>
+    </div>
+  </div>
+
+  <!-- Shadows -->
+  <div>
+    <h3 class="font-semibold mb-2">Shadows</h3>
+    <div class="flex gap-4">
+      <div class="bg-white p-4 shadow-spikers-sm">shadow-spikers-sm</div>
+      <div class="bg-white p-4 shadow-spikers">shadow-spikers</div>
+      <div class="bg-white p-4 shadow-spikers-md">shadow-spikers-md</div>
+      <div class="bg-white p-4 shadow-spikers-lg">shadow-spikers-lg</div>
+      <div class="bg-white p-4 shadow-spikers-xl">shadow-spikers-xl</div>
+    </div>
+  </div>
+
+  <!-- Typography -->
+  <div>
+    <h3 class="font-semibold mb-2">Typography</h3>
+    <div class="space-y-2">
+      <div class="font-spikers-primary text-spikers-xs">font-spikers-primary text-spikers-xs</div>
+      <div class="font-spikers-primary text-spikers-sm">font-spikers-primary text-spikers-sm</div>
+      <div class="font-spikers-primary text-spikers-base">font-spikers-primary text-spikers-base</div>
+      <div class="font-spikers-primary text-spikers-lg">font-spikers-primary text-spikers-lg</div>
+      <div class="font-spikers-primary text-spikers-xl">font-spikers-primary text-spikers-xl</div>
+      <div class="font-spikers-primary text-spikers-2xl">font-spikers-primary text-spikers-2xl</div>
+      <div class="font-spikers-primary text-spikers-3xl">font-spikers-primary text-spikers-3xl</div>
+      <div class="font-spikers-primary text-spikers-4xl">font-spikers-primary text-spikers-4xl</div>
+      <div class="font-spikers-primary text-spikers-5xl">font-spikers-primary text-spikers-5xl</div>
+    </div>
+  </div>
+</div>
