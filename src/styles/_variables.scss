@@ -9,6 +9,7 @@ $spikers-color-green: #02983E;
 $spikers-color-red: #E5372B;
 $spikers-color-orange: #FF9500;
 $spikers-color-soft-grey: #525D73;
+$spikers-color-slate-800: #334155;
 
 // Neutral Colors
 $spikers-color-white: #FFFFFF;
@@ -49,6 +50,7 @@ $spikers-color-soft-grey-lighter: lighten($spikers-color-soft-grey, 20%);
 $spikers-color-soft-grey-dark: darken($spikers-color-soft-grey, 10%);
 $spikers-color-soft-grey-darker: darken($spikers-color-soft-grey, 20%);
 
+
 // ==============================================
 // Typography
 // ==============================================
@@ -72,6 +74,7 @@ $spikers-font-size-2xl: 1.5rem;   // 24px
 $spikers-font-size-3xl: 1.875rem; // 30px
 $spikers-font-size-4xl: 2.25rem;  // 36px
 $spikers-font-size-5xl: 3rem;     // 48px
+$spikers-font-size-sm2: 0.9375rem; // 15px
 
 // Line Heights
 $spikers-line-height-tight: 1.25;
@@ -104,6 +107,9 @@ $spikers-border-radius-full: 9999px; // Full circle
 // Shadows
 // ==============================================
 
+$spikers-shadow-1: 0px 1px 3px 0px #0000000D;
+$spikers-shadow-2: 0px 1px 2px 0px #0000001A;
+$spikers-shadow-3: 0px 16px 18px 0px #0000000F;
 $spikers-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 $spikers-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 $spikers-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);

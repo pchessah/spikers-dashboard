@@ -1,0 +1,14 @@
+<div class="w-full">
+  <ng-content select="[info-title]"></ng-content>
+  @if (data().title) {
+    <h2 class="text-[var(--color-spikers-green)] font-bold text-[var(--text-spikers-xl)]" style="font-weight: var(--font-weight-spikers-bold); font-size: var(--text-spikers-xl);">
+      {{ data().title }}
+    </h2>
+  }
+  <ng-content select="[info-description]"></ng-content>
+  @if (data().description) {
+    <p class="text-[var(--color-gray-soft-700)]" style="font-size: var(--text-spikers-xs); font-weight: var(--font-weight-spikers-regular);">
+      {{ data().description }}
+    </p>
+  }
+</div>

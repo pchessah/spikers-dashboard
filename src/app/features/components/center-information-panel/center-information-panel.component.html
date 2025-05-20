@@ -1,0 +1,22 @@
+<div
+  class="w-full max-w-[385px] mx-auto md:max-w-[385px] sm:max-w-full bg-white rounded-lg shadow-spikers-1 flex flex-col gap-8 py-5 px-6">
+  <app-info-panel [data]="descriptionPanel()"></app-info-panel>
+  <app-info-panel [data]="extraPanel()"></app-info-panel>
+  <hr class="border-t border-gray-200 my-2" />
+  <table class="w-full border-collapse">
+    <tbody>
+      <tr>
+        <td class="align-top" style="color: var(--color-slate-800); font-weight: var(--font-weight-spikers-bold); font-size: var(--text-spikers-sm2);">Date</td>
+        <td class="align-top pl-6" style="font-weight: var(--font-weight-spikers-regular); font-size: var(--text-spikers-sm2);">2024-06-01</td>
+      </tr>
+      <tr>
+        <td class="align-top" style="color: var(--color-slate-800); font-weight: var(--font-weight-spikers-bold); font-size: var(--text-spikers-sm2);">Status</td>
+        <td class="align-top pl-6" style="font-weight: var(--font-weight-spikers-regular); font-size: var(--text-spikers-sm2);">Operational - All systems running smoothly with no reported incidents.</td>
+      </tr>
+      <tr>
+        <td class="align-top" style="color: var(--color-slate-800); font-weight: var(--font-weight-spikers-bold); font-size: var(--text-spikers-sm2);">Owner</td>
+        <td class="align-top pl-6" style="font-weight: var(--font-weight-spikers-regular); font-size: var(--text-spikers-sm2);">Jane Mwangi (Data Center Operations Manager)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

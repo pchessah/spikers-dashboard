@@ -8,6 +8,7 @@
   --color-spikers-black: #000000;
   --color-gray-soft-700: #525D73;
   --color-spikers-green-bg-active: #E9FAF0;
+  --color-slate-800: #334155;
 
   /* Green Shades */
   --color-spikers-green-light: #1ecf5a;
@@ -45,9 +46,6 @@
   --color-spikers-soft-grey-lighter: #8a97b0;
   --color-spikers-soft-grey-dark: #41495a;
   --color-spikers-soft-grey-darker: #323846;
-
-  /* Green Active */
-  --color-spikers-green-active: #00481D;
 
   /* Typography */
   --font-spikers-primary: 'Public Sans', sans-serif;
@@ -90,6 +88,9 @@
   --radius-spikers-full: 9999px;
 
   /* Shadows */
+  --shadow-spikers-1: 0px 1px 3px 0px #0000000D;
+  --shadow-spikers-2: 0px 1px 2px 0px #0000001A;
+  --shadow-spikers-3: 0px 16px 18px 0px #0000000F;
   --shadow-spikers-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-spikers: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow-spikers-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
