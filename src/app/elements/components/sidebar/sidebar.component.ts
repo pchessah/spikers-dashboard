@@ -15,7 +15,8 @@ export class SidebarComponent {
   navLinks = [
     { label: 'Dashboard', route: '/', icon: 'pi pi-home' },
     { label: 'Reports', route: '/reports', icon: 'pi pi-chart-bar' },
-    { label: 'Settings', route: '/settings', icon: 'pi pi-cog' }
+    { label: 'Sitemaps', route: '/sitemaps', icon: 'pi pi-sitemap' },
+    { label: 'Examples', route: '/examples', icon: 'pi pi-cog' },
   ];
 
   constructor(private readonly router: Router) {}
