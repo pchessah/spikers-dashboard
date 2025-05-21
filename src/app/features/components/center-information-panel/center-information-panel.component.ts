@@ -3,14 +3,18 @@ import { InfoPanelData } from '../../../models/info-panel.interface';
 import { InfoPanelComponent } from '../info-panel/info-panel.component';
 import { InfoPanelTableComponent } from '../info-panel-table/info-panel-table.component';
 import { RemediationTechniquesContainerComponent } from '../remediation-techniques-container/remediation-techniques-container.component';
+import { SidebarStateService } from '../../services/sidebar-state.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-center-information-panel',
-  imports: [InfoPanelComponent, InfoPanelTableComponent, RemediationTechniquesContainerComponent],
+  imports: [CommonModule, InfoPanelComponent, InfoPanelTableComponent, RemediationTechniquesContainerComponent],
   templateUrl: './center-information-panel.component.html',
   styleUrl: './center-information-panel.component.scss'
 })
 export class CenterInformationPanelComponent {
+  constructor(public sidebarState: SidebarStateService) {}
+
   descriptionPanel = signal<InfoPanelData>({
     title: 'Description',
     description: `The Data Center Dashboard provides real-time monitoring and management of critical infrastructure. It displays key metrics such as server health, network performance, power usage, and environmental conditions. With customizable alerts and visualizations, administrators can quickly identify and resolve issues, ensuring maximum uptime and efficiency. The dashboard integrates with various data sources, offering a unified view of operations. Its intuitive interface allows users to drill down into specific systems, track trends, and generate detailed reports. This tool is essential for maintaining optimal performance and security in modern data centers.`

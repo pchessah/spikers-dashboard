@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { NgClass } from '@angular/common';
+import { SidebarStateService } from '../../../features/services/sidebar-state.service';
 
 @Component({
   selector: 'app-layout-container',
@@ -9,5 +10,5 @@ import { NgClass } from '@angular/common';
   styleUrl: './layout-container.component.scss'
 })
 export class LayoutContainerComponent {
-
+  constructor(public sidebarState: SidebarStateService) {}
 }

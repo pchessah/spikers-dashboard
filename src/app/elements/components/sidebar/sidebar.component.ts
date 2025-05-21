@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { NgClass } from '@angular/common';
+import { SidebarStateService } from '../../../features/services/sidebar-state.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,7 +11,7 @@ import { NgClass } from '@angular/common';
 })
 export class SidebarComponent {
 
-  minimized = signal(false);
+  constructor(private readonly router: Router, public sidebarState: SidebarStateService) {}
 
   navLinks = [
     { label: 'Dashboard', route: '/', icon: 'pi pi-home' },
@@ -19,10 +20,8 @@ export class SidebarComponent {
     { label: 'Examples', route: '/examples', icon: 'pi pi-cog' },
   ];
 
-  constructor(private readonly router: Router) {}
-
   toggleSidebar() {
-    this.minimized.update(v => !v);
+    this.sidebarState.toggle();
   }
 
   isActive(route: string): boolean {

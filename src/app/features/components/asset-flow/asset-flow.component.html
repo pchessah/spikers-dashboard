@@ -1,113 +1,18 @@
 <div class="w-full flex flex-col items-center gap-[10px]">
   <h2 class="text-[var(--color-spikers-green)] font-bold text-spikers-xl text-start w-full">Asset Flow</h2>
-  <!-- Main flow: horizontal on desktop, vertical on mobile -->
+
+  <!-- Mermaid diagram container -->
   <div class="bg-[var(--color-spikers-grey-50)] p-4 rounded-[var(--radius-spikers-lg)] w-full">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-center gap-4 w-full">
-      <!-- Node 1 -->
-      <div class="flex flex-col items-center relative">
-        <div class="flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
-          <i class="pi pi-database text-spikers-xl text-[var(--color-spikers-blue)]"></i>
-        </div>
-        <div class="text-xs mt-1">Source</div>
-        <div class="text-xs text-gray-500">This is the source node.</div>
-      </div>
-      <!-- Arrow -->
-      <div class="flex items-center justify-center md:mx-2 md:my-0 my-2">
-        <svg class="hidden md:block" width="40" height="24" viewBox="0 0 40 24" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 12h36m0 0l-6-6m6 6l-6 6" stroke="#4680FF" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-        <svg class="md:hidden" width="24" height="40" viewBox="0 0 24 40" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 0v36m0 0l6-6m-6 6l-6-6" stroke="#4680FF" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-      </div>
-      <!-- Node 2 -->
-      <div class="flex flex-col items-center relative">
-        <div class="flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
-          <i class="pi pi-arrow-right-arrow-left text-spikers-xl text-[var(--color-spikers-blue)]"></i>
-        </div>
-        <div class="text-xs mt-1">Processing</div>
-        <div class="text-xs text-gray-500">This is the processing node.</div>
-      </div>
-      <!-- Arrow -->
-      <div class="flex items-center justify-center md:mx-2 md:my-0 my-2">
-        <svg class="hidden md:block" width="40" height="24" viewBox="0 0 40 24" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 12h36m0 0l-6-6m6 6l-6 6" stroke="#4680FF" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-        <svg class="md:hidden" width="24" height="40" viewBox="0 0 24 40" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 0v36m0 0l6-6m-6 6l-6-6" stroke="#4680FF" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-      </div>
-      <!-- Node 3 (split) -->
-      <div class="flex flex-col items-center relative">
-        <div class="flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
-          <i class="pi pi-server text-spikers-xl text-[var(--color-spikers-blue)]"></i>
-        </div>
-        <div class="text-xs mt-1">Destination</div>
-        <div class="text-xs text-gray-500">This is the destination node.</div>
-      </div>
-    </div>
-    <!-- Split arrows and nodes -->
-    <div class="w-full flex flex-col md:flex-row md:justify-center md:items-start gap-4 mt-4">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-center">
-        <div class="flex items-center justify-center md:mr-2 md:mb-0 mb-2">
-          <svg class="hidden md:block" width="40" height="24" viewBox="0 0 40 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 12h36m0 0l-6-6m6 6l-6 6" stroke="#4680FF" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-          <svg class="md:hidden" width="24" height="40" viewBox="0 0 24 40" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 0v36m0 0l6-6m-6 6l-6-6" stroke="#4680FF" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </div>
-        <div class="flex flex-col items-center relative">
-          <div
-            class="flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
-            <i class="pi pi-user text-spikers-xl text-[var(--color-spikers-blue)]"></i>
-          </div>
-          <div class="text-xs mt-1">User A</div>
-          <div class="text-xs text-gray-500">User A receives the asset.</div>
-        </div>
-      </div>
-      <div class="flex flex-col md:flex-row md:items-center md:justify-center">
-        <div class="flex items-center justify-center md:ml-2 md:mb-0 mb-2">
-          <svg class="hidden md:block" width="40" height="24" viewBox="0 0 40 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 12h36m0 0l-6-6m6 6l-6 6" stroke="#4680FF" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-          <svg class="md:hidden" width="24" height="40" viewBox="0 0 24 40" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 0v36m0 0l6-6m-6 6l-6-6" stroke="#4680FF" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </div>
-        <div class="flex flex-col items-center relative">
-          <div
-            class="flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
-            <i class="pi pi-user text-spikers-xl text-[var(--color-spikers-blue)]"></i>
-          </div>
-          <div class="text-xs mt-1">User B</div>
-          <div class="text-xs text-gray-500">User B receives the asset.</div>
-        </div>
-      </div>
-    </div>
+    <!-- Mermaid diagram -->
+    <div class="mermaid" [innerHTML]="mermaidCode"></div>
 
     <hr class="border-t border-gray-200 my-2 w-full" />
-    <div class="flex flex-row gap-6  items-center mt-4">
+
+    <div class="flex flex-row gap-6 items-center mt-4">
       <ng-container *ngFor="let shield of shields">
         <div class="flex items-center gap-2">
           <div class="flex items-center justify-center w-6 h-6 rounded-full" [ngClass]="shield.bgColor">
-            <i class="pi pi-shield text-white  text-spikers-lg"></i>
+            <i class="pi pi-shield text-white text-spikers-lg"></i>
           </div>
           <span class="text-spikers-sm2 font-semibold" [ngClass]="shield.textColor">{{ shield.label }}</span>
         </div>
