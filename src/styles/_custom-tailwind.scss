@@ -96,6 +96,7 @@
   --radius-spikers-xl: 1rem;
   --radius-spikers-full: 9999px;
 
+
   /* Shadows */
   --shadow-spikers-1: 0px 1px 3px 0px #0000000D;
   --shadow-spikers-2: 0px 1px 2px 0px #0000001A;
@@ -113,6 +114,9 @@
   --breakpoint-spikers-lg: 992px;
   --breakpoint-spikers-xl: 1200px;
   --breakpoint-spikers-xxl: 1400px;
+
+  --color-spikers-contextual-risk-bg: #FFE2E0;
+  --color-spikers-critical: #C6190D;
 }
 
 .text-spikers-xxs { font-size: var(--text-spikers-xxs); }
