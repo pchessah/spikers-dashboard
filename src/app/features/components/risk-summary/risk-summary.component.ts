@@ -95,6 +95,6 @@ export class RiskSummaryComponent {
         }
       }
     },
-    cutout: '70%'
+    cutout: '85%'
   };
 }
