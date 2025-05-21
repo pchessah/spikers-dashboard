@@ -1,1 +1,23 @@
-<p>risk-summary works!</p>
+<div class="rounded-2xl border border-[var(--color-spikers-grey-bg)] shadow-[var(--shadow-spikers-2)] w-full overflow-hidden">
+  <div>
+    <div class="text-spikers-lg px-6 pt-6" style="font-weight: var(--font-weight-spikers-medium)">Contextual risk</div>
+    <div class="flex flex-row gap-4 mt-4 px-6 pb-6">
+      <div class="flex flex-col justify-center gap-2">
+        <ng-container *ngFor="let item of legendItems()">
+          <span class="flex items-center text-spikers-sm2">
+            <span class="inline-block rounded-full mr-2" [ngStyle]="{ width: '16px', height: '16px', background: item.color }"></span>
+            <span style="font-weight: var(--font-weight-spikers-bold)">{{ item.count }}</span>
+            <span class="ml-1" style="font-weight: var(--font-weight-spikers-regular)">{{ item.label }}</span>
+          </span>
+        </ng-container>
+      </div>
+      <div class="relative w-[150px] h-[150px]">
+        <p-chart type="doughnut" [data]="chartData()" [options]="chartOptions"></p-chart>
+        <!-- Center number overlay -->
+        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
+          <span class="text-spikers-lg" style="font-weight: var(--font-weight-spikers-bold)">{{ maxRisk().value }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

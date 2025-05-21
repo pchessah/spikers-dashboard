@@ -1,39 +1,50 @@
-import { Component, signal, computed } from '@angular/core';
-
-interface AssetRow {
-  icon: string;
-  assetName: string;
-  ip: string;
-  contextualRisk: string;
-}
+import { Component } from '@angular/core';
+import { AssetService } from '../../services/asset.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contextual-risk-table',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './contextual-risk-table.component.html',
   styleUrl: './contextual-risk-table.component.scss'
 })
 export class ContextualRiskTableComponent {
-  readonly pageSize = 2;
-  readonly data = [
-    { icon: 'pi pi-server', assetName: 'Server Alpha', ip: '192.168.1.10', contextualRisk: 'Critical' },
-    { icon: 'pi pi-desktop', assetName: 'Workstation Beta', ip: '192.168.1.11', contextualRisk: 'Critical' },
-    { icon: 'pi pi-database', assetName: 'Database Gamma', ip: '192.168.1.12', contextualRisk: 'Critical' },
-    { icon: 'pi pi-cloud', assetName: 'Cloud Node Delta', ip: '192.168.1.13', contextualRisk: 'Critical' }
-  ];
-  page = signal(1);
-  totalPages = Math.ceil(this.data.length / this.pageSize);
+  data;
+  paginatedData;
+  page;
+  totalPages;
+  pageSize;
 
-  paginatedData = computed(() => {
-    const start = (this.page() - 1) * this.pageSize;
-    return this.data.slice(start, start + this.pageSize);
-  });
+  constructor(private assetService: AssetService) {
+    this.data = this.assetService.getAssetsSignal();
+    this.paginatedData = this.assetService.getPaginatedAssetsSignal();
+    this.page = this.assetService.getPageSignal();
+    this.totalPages = this.assetService.getTotalPagesSignal();
+    this.pageSize = this.assetService.getPageSize();
+  }
+
+  riskBgColor(risk: string) {
+    switch (risk) {
+      case 'Critical': return 'var(--color-spikers-contextual-risk-bg)';
+      case 'Warning': return 'var(--color-spikers-orange-bg, #FFF4E0)';
+      case 'Safe': return 'var(--color-spikers-green-bg-active, #E9FAF0)';
+      default: return 'var(--color-spikers-contextual-risk-bg)';
+    }
+  }
+  riskTextColor(risk: string) {
+    switch (risk) {
+      case 'Critical': return 'var(--color-spikers-critical)';
+      case 'Warning': return 'var(--color-spikers-orange)';
+      case 'Safe': return 'var(--color-spikers-green)';
+      default: return 'var(--color-spikers-critical)';
+    }
+  }
 
   prevPage() {
-    if (this.page() > 1) this.page.update(p => p - 1);
+    this.assetService.prevPage();
   }
   nextPage() {
-    if (this.page() < this.totalPages) this.page.update(p => p + 1);
+    this.assetService.nextPage();
   }
 
   min(a: number, b: number) {

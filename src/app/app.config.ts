@@ -5,27 +5,30 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 
 import { routes } from './app.routes';
-import {TranslateModule, TranslateLoader} from "@ngx-translate/core";
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {HttpClient, provideHttpClient} from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 
 const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (http: HttpClient) =>
-    new TranslateHttpLoader(http, './i18n/', '.json');
+  new TranslateHttpLoader(http, './i18n/', '.json');
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
-    provideHttpClient(),
-    importProvidersFrom([TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: httpLoaderFactory,
-        deps: [HttpClient],
-      },
-    })]),
+  provideHttpClient(),
+  importProvidersFrom([TranslateModule.forRoot({
+    loader: {
+      provide: TranslateLoader,
+      useFactory: httpLoaderFactory,
+      deps: [HttpClient],
+    },
+  })]),
   provideAnimationsAsync(),
   providePrimeNG({
     theme: {
-      preset: Aura
+      preset: Aura,
+      options: {
+        darkModeSelector: false || 'none'
+      }
     }
   })]
 };
