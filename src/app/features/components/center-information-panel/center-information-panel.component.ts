@@ -2,9 +2,11 @@ import { Component, signal } from '@angular/core';
 import { InfoPanelData } from '../../../models/info-panel.interface';
 import { InfoPanelComponent } from '../info-panel/info-panel.component';
 import { InfoPanelTableComponent } from '../info-panel-table/info-panel-table.component';
+import { RemediationTechniquesContainerComponent } from '../remediation-techniques-container/remediation-techniques-container.component';
+
 @Component({
   selector: 'app-center-information-panel',
-  imports: [InfoPanelComponent, InfoPanelTableComponent],
+  imports: [InfoPanelComponent, InfoPanelTableComponent, RemediationTechniquesContainerComponent],
   templateUrl: './center-information-panel.component.html',
   styleUrl: './center-information-panel.component.scss'
 })

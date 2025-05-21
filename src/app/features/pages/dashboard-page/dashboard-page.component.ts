@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { CenterInformationPanelComponent } from "../../components/center-information-panel/center-information-panel.component";
 
 @Component({
