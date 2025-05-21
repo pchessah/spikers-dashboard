@@ -1,22 +1,21 @@
 <div class="w-full flex flex-col items-center gap-[10px]">
   <h2 class="text-[var(--color-spikers-green)] font-bold text-spikers-xl text-start w-full">Asset Flow</h2>
 
-  <!-- Mermaid diagram container -->
   <div class="bg-[var(--color-spikers-grey-50)] p-4 rounded-[var(--radius-spikers-lg)] w-full">
     <!-- Mermaid diagram -->
     <div class="mermaid" [innerHTML]="mermaidCode"></div>
 
     <hr class="border-t border-gray-200 my-2 w-full" />
 
-    <div class="flex flex-row gap-6 items-center mt-4">
-      <ng-container *ngFor="let shield of shields">
+    <div class="flex flex-col sm:flex-row gap-6 items-start mt-4">
+      @for (shield of shields; track shield.label) {
         <div class="flex items-center gap-2">
-          <div class="flex items-center justify-center w-6 h-6 rounded-full" [ngClass]="shield.bgColor">
-            <i class="pi pi-shield text-white text-spikers-lg"></i>
+          <div class="flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full" [ngClass]="shield.bgColor">
+            <i class="pi pi-shield text-white text-spikers-xs sm:text-spikers-base"></i>
           </div>
           <span class="text-spikers-sm2 font-semibold" [ngClass]="shield.textColor">{{ shield.label }}</span>
         </div>
-      </ng-container>
+      }
     </div>
   </div>
 </div>
