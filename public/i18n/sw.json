@@ -2,5 +2,17 @@
 	"demo.simple.text-as-attribute": "Hii ni swahili",
 	"demo.simple.text-as-content": "Hii ni swahili 2",
 	"demo.simple.text-with-pipe": "Hii ni swahili 3",
-	"demo.title": "Hii ni swahili 4"
+	"demo.title": "Hii ni swahili 4",
+	"sidebar.dashboard": "Dashibodi",
+	"sidebar.reports": "Ripoti",
+	"sidebar.sitemaps": "Ramani ya Tovuti",
+	"sidebar.examples": "Mifano",
+	"sidebar.notifications": "Arifa",
+	"sidebar.help": "Kituo cha Msaada",
+	"sidebar.logout": "Toka",
+	"sidebar.firstname": "Jina la Kwanza",
+	"sidebar.lastname": "Jina la Mwisho",
+	"sidebar.language": "Lugha",
+	"sidebar.language.english": "Kiingereza",
+	"sidebar.language.kiswahili": "Kiswahili"
 }

@@ -2,5 +2,17 @@
 	"demo.simple.text-as-attribute": "A demo with a simple text attribute",
 	"demo.simple.text-as-content": "This is english 2",
 	"demo.simple.text-with-pipe": "This is english 2",
-	"demo.title": "This is english 2"
+	"demo.title": "This is english 2",
+	"sidebar.dashboard": "Dashboard",
+	"sidebar.reports": "Reports",
+	"sidebar.sitemaps": "Sitemaps",
+	"sidebar.examples": "Examples",
+	"sidebar.notifications": "Notifications",
+	"sidebar.help": "Help Center",
+	"sidebar.logout": "Logout",
+	"sidebar.firstname": "First Name",
+	"sidebar.lastname": "Last Name",
+	"sidebar.language": "Language",
+	"sidebar.language.english": "English",
+	"sidebar.language.kiswahili": "Kiswahili"
 }
