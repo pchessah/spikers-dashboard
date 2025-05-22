@@ -1,0 +1,13 @@
+.fw-spikers-medium { font-weight: var(--font-weight-spikers-medium); }
+.fw-spikers-bold { font-weight: var(--font-weight-spikers-bold); }
+.fw-spikers-regular { font-weight: var(--font-weight-spikers-regular); }
+.legend-dot {
+  display: inline-block;
+  border-radius: 9999px;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+}
+.center-number {
+  font-weight: var(--font-weight-spikers-bold);
+}

@@ -2,8 +2,13 @@
 <div class="flex flex-col gap-2 p-2 px-3 rounded-[var(--radius-spikers-lg)] shadow-[var(--shadow-spikers-1)]">
   <h1 class="text-spikers-sm2 font-semibold text-[var(--color-spikers-title)]">{{ technique.cardTitle }}</h1>
 
-  <div class="bg-[var(--color-spikers-grey-50)] flex flex-col sm:flex-row gap-4 items-start py-2 px-4 rounded cursor-pointer select-none" (click)="toggleDescription()">
-
+  <button
+    type="button"
+    class="bg-[var(--color-spikers-grey-50)] flex flex-col sm:flex-row gap-4 items-start py-2 px-4 rounded cursor-pointer select-none w-full"
+    (click)="toggleDescription()"
+    [attr.aria-expanded]="descriptionOpen()"
+    [attr.aria-controls]="'desc-' + technique.cardTitle"
+  >
     <div class="flex items-center gap-2 mb-2 w-full sm:w-1/2">
       @if (technique.icon) {
         <div class="flex items-center justify-center w-[53px] md:h-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
@@ -15,14 +20,12 @@
         <div class="text-spikers-xs text-[var(--color-spikers-subtitle)]">{{ technique.subtitle }}</div>
       </div>
     </div>
-
     <div class="w-px bg-[var(--color-spikers-divider)] mx-1 self-stretch hidden sm:block"></div>
-
     <div class="text-spikers-xs2 font-regular text-[var(--color-spikers-title)] mb-1 flex-1 w-full sm:w-auto sm:mb-0">
       {{ technique.summary }}
     </div>
-  </div>
-  <div [class]="'overflow-hidden transition-all duration-300 ' + (descriptionOpen() ? 'max-h-40 mt-2' : 'max-h-0')">
+  </button>
+  <div [id]="'desc-' + technique.cardTitle" [class]="'overflow-hidden transition-all duration-300 ' + (descriptionOpen() ? 'max-h-40 mt-2' : 'max-h-0')">
     <div class="text-spikers-xs text-[var(--color-spikers-soft-grey)]">{{ technique.description }}</div>
   </div>
 </div>

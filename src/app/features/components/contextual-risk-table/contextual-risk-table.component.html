@@ -3,8 +3,8 @@
     <table class="w-full min-w-[400px] border-collapse text-[1.05rem]">
       <thead>
         <tr>
-          <th class="text-left text-spikers-sm2 font-semibold text-[var(--color-spikers-title)] px-4 py-2">Asset</th>
-          <th class="text-left text-spikers-sm2 font-semibold text-[var(--color-spikers-title)] px-4 py-2">Contextual risk</th>
+          <th scope="col" class="text-left text-spikers-sm2 font-semibold text-[var(--color-spikers-title)] px-4 py-2">Asset</th>
+          <th scope="col" class="text-left text-spikers-sm2 font-semibold text-[var(--color-spikers-title)] px-4 py-2">Contextual risk</th>
         </tr>
       </thead>
       <tbody>
@@ -18,19 +18,18 @@
                   <i [class]="row.icon + ' text-[var(--color-spikers-blue)] text-xl'" aria-hidden="true"></i>
                 </div>
                 <div class="flex flex-col">
-                  <span class="text-spikers-xs2 font-semibold text-[var(--color-spikers-soft-grey)]" style="font-weight: var(--font-weight-spikers-semibold)">{{ row.assetName }}</span>
-                  <span class="text-spikers-xxs" style="font-weight: var(--font-weight-spikers-medium)">{{ row.ip }}</span>
+                  <span class="text-spikers-xs2 font-semibold text-[var(--color-spikers-soft-grey)] fw-spikers-semibold">{{ row.assetName }}</span>
+                  <span class="text-spikers-xxs fw-spikers-medium">{{ row.ip }}</span>
                 </div>
               </div>
             </td>
             <!-- Contextual risk column -->
             <td class="px-4 py-2">
               <span
-                class="inline-block rounded-full px-4 py-1 text-spikers-sm2"
+                class="inline-block rounded-full px-4 py-1 text-spikers-sm2 contextual-risk-pill"
                 [ngStyle]="{
                   'background-color': riskBgColor(row.contextualRisk),
-                  color: riskTextColor(row.contextualRisk),
-                  'font-weight': 'var(--font-weight-spikers-bold)'
+                  color: riskTextColor(row.contextualRisk)
                 }"
               >
                 {{ row.contextualRisk }}
