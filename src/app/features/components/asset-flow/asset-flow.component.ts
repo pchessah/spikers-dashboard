@@ -27,26 +27,18 @@ export class AssetFlowComponent {
     }
   ];
 
-  mermaidCode = `
-flowchart LR
-    A@{ icon: "pi:pi-database", form: circle, label: "Source", pos: b, h: 60 }
-    B@{ icon: "pi:pi-arrows-h", form: circle, label: "Processing", pos: b, h: 60 }
-    C@{ icon: "pi:pi-server", form: circle, label: "Destination", pos: b, h: 60 }
-    D@{ icon: "pi:pi-user", form: circle, label: "User A", pos: b, h: 60 }
-    E@{ icon: "pi:pi-user", form: circle, label: "User B", pos: b, h: 60 }
+  nodes = [
+    { id: 'A', icon: 'pi pi-database', label: 'Source' },
+    { id: 'B', icon: 'pi pi-cog', label: 'Processing' },
+    { id: 'C', icon: 'pi pi-server', label: 'Destination' },
+    { id: 'D', icon: 'pi pi-user', label: 'User A' },
+    { id: 'E', icon: 'pi pi-user', label: 'User B' }
+  ];
 
-    A --> B --> C
-    C --> D
-    C --> E
-
-    classDef invisible fill:none,stroke:none;
-    classDef labelStyle font-size:13px,fill:#525D73,font-weight:600;
-    class A,B,C,D,E labelStyle;
-
-
-
-`;
-
-
-
+  edges = [
+    { from: 'A', to: 'B' },
+    { from: 'B', to: 'C' },
+    { from: 'C', to: 'D' },
+    { from: 'C', to: 'E' }
+  ];
 }
