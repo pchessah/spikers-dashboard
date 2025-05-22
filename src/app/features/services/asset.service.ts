@@ -1,18 +1,12 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { Asset } from '../../models/asset.interface';
-
-const ASSET_DATA: Asset[] = [
-  { icon: 'pi pi-server', assetName: 'Server Alpha', ip: '192.168.1.10', contextualRisk: 'Critical' },
-  { icon: 'pi pi-desktop', assetName: 'Workstation Beta', ip: '192.168.1.11', contextualRisk: 'Critical' },
-  { icon: 'pi pi-database', assetName: 'Database Gamma', ip: '192.168.1.12', contextualRisk: 'Warning' },
-  { icon: 'pi pi-cloud', assetName: 'Cloud Node Delta', ip: '192.168.1.13', contextualRisk: 'Safe' }
-];
+import { ASSET_DATA } from '../data';
 
 @Injectable({providedIn: 'root'})
 export class AssetService {
-  private assetsSignal = signal<Asset[]>(ASSET_DATA);
-  private pageSize = 2;
-  private page = signal(1);
+  private readonly assetsSignal = signal<Asset[]>(ASSET_DATA);
+  private readonly pageSize = 2;
+  private readonly page = signal(1);
 
   getAssetsSignal() {
     return this.assetsSignal;

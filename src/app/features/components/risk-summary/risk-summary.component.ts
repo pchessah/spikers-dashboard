@@ -60,7 +60,13 @@ export class RiskSummaryComponent {
     return RISK_STATES.map(state => ({
       label: state,
       count: counts[state],
-      color: this.riskColors[state]
+      color: this.riskColors[state],
+      bgClass:
+        state === 'Critical'
+          ? 'bg-critical'
+          : state === 'Warning'
+          ? 'bg-warning'
+          : 'bg-safe',
     }));
   });
 

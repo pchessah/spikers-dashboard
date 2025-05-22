@@ -16,6 +16,7 @@
   --color-spikers-subtitle: #667085;
   --color-spikers-divider: #858D9D;
   --color-spikers-grey-50: #FAFAFA;
+  --color-spikers-grey-scale-7: #656575;
 
   /* Green Shades */
   --color-spikers-green-light: #1ecf5a;
@@ -117,6 +118,11 @@
 
   --color-spikers-contextual-risk-bg: #FFE2E0;
   --color-spikers-critical: #C6190D;
+
+  /* Vulnerabilities Colors */
+  --color-spikers-vuln-bg: #FFF1F0;
+  --color-spikers-vuln-bottom-bg: #F2EDFF;
+  --color-spikers-vuln-bottom-text: #6236CC;
 }
 
 .text-spikers-xxs { font-size: var(--text-spikers-xxs); }
@@ -131,3 +137,19 @@
 .text-spikers-3xl { font-size: var(--text-spikers-3xl); }
 .text-spikers-4xl { font-size: var(--text-spikers-4xl); }
 .text-spikers-5xl { font-size: var(--text-spikers-5xl); }
+
+
+.fw-spikers-medium { font-weight: var(--font-weight-spikers-medium); }
+.fw-spikers-bold { font-weight: var(--font-weight-spikers-bold); }
+.fw-spikers-regular { font-weight: var(--font-weight-spikers-regular); }
+.legend-dot {
+  display: inline-block;
+  border-radius: 9999px;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+}
+.center-number {
+  font-weight: var(--font-weight-spikers-bold);
+}
+

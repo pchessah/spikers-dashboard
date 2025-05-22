@@ -5,17 +5,17 @@
       <div class="flex flex-col justify-center gap-2 mb-4 md:mb-0">
         <ng-container *ngFor="let item of legendItems()">
           <span class="flex items-center text-spikers-sm2">
-            <span class="legend-dot" [ngStyle]="{ background: item.color }"></span>
+            <span class="inline-block rounded-full mr-2 w-4 h-4" [ngClass]="item.bgClass"></span>
             <span class="fw-spikers-bold">{{ item.count }}</span>
             <span class="ml-1 fw-spikers-regular">{{ item.label }}</span>
           </span>
         </ng-container>
       </div>
-      <div class="relative w-[150px] h-[150px] mx-auto md:mx-0" role="img" aria-label="Doughnut chart showing contextual risk distribution">
+      <div class="relative w-[150px] h-[150px] mx-auto md:mx-0">
         <p-chart type="doughnut" [data]="chartData()" [options]="chartOptions"></p-chart>
         <!-- Center number overlay -->
         <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
-          <span class="text-spikers-lg center-number">{{ maxRisk().value }}</span>
+          <span class="text-[var(--color-spikers-grey-scale-7)] text-spikers-4xl fw-spikers-bold">{{ maxRisk().value }}</span>
         </div>
       </div>
     </div>

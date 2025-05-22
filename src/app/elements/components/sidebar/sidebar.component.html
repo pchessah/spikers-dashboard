@@ -84,12 +84,7 @@
       (click)="switchLanguage(currentLang === 'en' ? 'sw' : 'en')"
       [attr.aria-label]="'Switch language to ' + (currentLang === 'en' ? 'Kiswahili' : 'English')"
     >
-      <span
-        class="inline-flex items-center justify-center w-7 h-7 rounded-full  text-xs font-bold text-gray-700 "
-        aria-hidden="true"
-      >
-        {{ currentLang === 'en' ? 'EN' : 'SW' }}
-      </span>
+      <i class="pi pi-language text-xl text-[var(--color-gray-soft-700)]"></i>
       @if (!sidebarState.isMinimized()) {
         <span class="font-spikers-primary font-spikers-regular leading-[22px] tracking-[0.01em] align-middle capitalize text-[var(--text-spikers-sm2)]">
           {{ 'sidebar.language' | translate }}

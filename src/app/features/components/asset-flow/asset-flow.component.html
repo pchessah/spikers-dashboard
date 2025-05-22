@@ -9,14 +9,20 @@
           <!-- Main flow nodes -->
           <div class="flex flex-row items-center gap-3">
             <!-- Node 1: Source -->
-            <div class="flex flex-col items-center">
-              <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-spikers-blue-bg)]">
-                <i class="pi pi-database text-[var(--color-spikers-blue)] text-2xl"></i>
+            <div class="flex flex-col items-center"
+                 (mouseenter)="onNodeMouseEnter($event)"
+                 (mouseleave)="onNodeMouseLeave()">
+              <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-spikers-contextual-risk-bg)]">
+                <i class="pi pi-database text-[var(--color-spikers-critical)] text-2xl"></i>
               </div>
               <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Server Alpha</span>
-              <span class="text-[10px] text-[var(--color-spikers-soft-grey)]">192.168.1.10</span>
-              <span class="inline-block rounded-full px-2 py-0.5 text-xs mt-1 font-bold"
-                style="background: var(--color-spikers-contextual-risk-bg); color: var(--color-spikers-critical);">Critical</span>
+              <div *ngIf="showVulnPopover"
+                   class="fixed z-50 transition-opacity duration-200 bg-white rounded-[var(--radius-spikers-xxl,2rem)] shadow-spikers-lg"
+                   [ngStyle]="{ left: popoverX + 'px', top: popoverY + 'px' }"
+                   (mouseenter)="showVulnPopover = true"
+                   (mouseleave)="onNodeMouseLeave()">
+                <app-vulnerabilities-drawer></app-vulnerabilities-drawer>
+              </div>
             </div>
             <!-- Arrow -->
             <svg class="mx-2" width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,9 +35,6 @@
                 <i class="pi pi-cog text-[var(--color-spikers-blue)] text-2xl"></i>
               </div>
               <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Workstation Beta</span>
-              <span class="text-[10px] text-[var(--color-spikers-soft-grey)]">192.168.1.11</span>
-              <span class="inline-block rounded-full px-2 py-0.5 text-xs mt-1 font-bold"
-                style="background: var(--color-spikers-contextual-risk-bg); color: var(--color-spikers-critical);">Critical</span>
             </div>
             <!-- Arrow -->
             <svg class="mx-2" width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,9 +47,6 @@
                 <i class="pi pi-server text-[var(--color-spikers-blue)] text-2xl"></i>
               </div>
               <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Database Gamma</span>
-              <span class="text-[10px] text-[var(--color-spikers-soft-grey)]">192.168.1.12</span>
-              <span class="inline-block rounded-full px-2 py-0.5 text-xs mt-1 font-bold"
-                style="background: var(--color-spikers-contextual-risk-bg); color: var(--color-spikers-warning);">Warning</span>
             </div>
 
             <div class="flex flex-col items-center justify-center">
@@ -72,8 +72,6 @@
                 </div>
                 <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Cloud Node Delta</span>
                 <span class="text-[10px] text-[var(--color-spikers-soft-grey)]">192.168.1.13</span>
-                <span class="inline-block rounded-full px-2 py-0.5 text-xs mt-1 font-bold"
-                  style="background: var(--color-spikers-green-bg-active); color: var(--color-spikers-green);">Safe</span>
               </div>
               <!-- User B (bottom) -->
               <div class="flex flex-col items-center mt-8">
@@ -82,8 +80,6 @@
                 </div>
                 <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Cloud Node Epsilon</span>
                 <span class="text-[10px] text-[var(--color-spikers-soft-grey)]">192.168.1.14</span>
-                <span class="inline-block rounded-full px-2 py-0.5 text-xs mt-1 font-bold"
-                  style="background: var(--color-spikers-green-bg-active); color: var(--color-spikers-green);">Safe</span>
               </div>
             </div>
           </div>

@@ -1,13 +1,9 @@
-.fw-spikers-medium { font-weight: var(--font-weight-spikers-medium); }
-.fw-spikers-bold { font-weight: var(--font-weight-spikers-bold); }
-.fw-spikers-regular { font-weight: var(--font-weight-spikers-regular); }
-.legend-dot {
-  display: inline-block;
-  border-radius: 9999px;
-  width: 16px;
-  height: 16px;
-  margin-right: 0.5rem;
+.bg-critical {
+  background-color: var(--color-spikers-critical);
 }
-.center-number {
-  font-weight: var(--font-weight-spikers-bold);
+.bg-warning {
+  background-color: var(--color-spikers-orange);
+}
+.bg-safe {
+  background-color: var(--color-spikers-green);
 }
