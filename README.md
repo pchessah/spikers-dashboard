@@ -1,6 +1,14 @@
 # Spikers Dashboard
 
 A modern, modular, and fully responsive Angular dashboard UI, built with Tailwind CSS, Angular signals, and best practices for accessibility, design tokens, and maintainability.
+![image](https://github.com/user-attachments/assets/869a6e7e-d307-4f65-8f3f-3a110cd70129)
+![image](https://github.com/user-attachments/assets/62967089-331f-4bd5-b0d9-0d55e4803b73)
+![image](https://github.com/user-attachments/assets/c69efb85-d55b-4096-9d1b-b684c6ef7e32)
+![image](https://github.com/user-attachments/assets/f85d52ac-61ff-434a-a15a-ff6ad96f0d36)
+![image](https://github.com/user-attachments/assets/7ed32644-150b-41ad-ab41-6181e1e39916)
+
+
+
 
 ---
 
