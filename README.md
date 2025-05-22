@@ -1,59 +1,154 @@
-# SpikersDashboard
+# Spikers Dashboard
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
+A modern, modular, and fully responsive Angular dashboard UI, built with Tailwind CSS, Angular signals, and best practices for accessibility, design tokens, and maintainability.
 
-## Development server
+---
 
-To start a local development server, run:
+## Features
+
+- **Sidebar Navigation**
+  - Responsive, collapsible sidebar with ARIA and keyboard accessibility.
+  - Navigation links with icons and active state.
+  - Language switcher (English/Kiswahili) with instant UI update.
+  - User profile and logout button.
+
+- **Dashboard Layout**
+  - Main dashboard page with a two-panel layout:
+    - **Center Information Panel**: Info panels, remediation techniques, and info tables.
+    - **Right Information Panel**: Risk summary, contextual risk table, and asset flow visualization.
+
+- **Asset Flow Visualization**
+  - Custom, responsive flow diagram showing asset relationships and risk status.
+  - Uses SVG for arrows and PrimeNG icons for nodes.
+
+- **Contextual Risk Table**
+  - Responsive, paginated table of assets and their contextual risk.
+  - Uses design tokens for all colors, font sizes, and weights.
+  - Fully accessible and keyboard navigable.
+
+- **Risk Summary**
+  - Doughnut chart (PrimeNG/Chart.js) showing risk distribution.
+  - Custom legend and center value.
+  - ARIA roles for screen reader accessibility.
+
+- **Remediation Techniques**
+  - Expandable/collapsible cards for remediation advice.
+  - ARIA attributes for accessibility.
+
+- **Internationalization**
+  - Uses `@ngx-translate/core` for runtime language switching.
+  - English and Kiswahili translations included.
+
+- **Design Tokens & Theming**
+  - All colors, font sizes, radii, and shadows are managed via SCSS/CSS variables and Tailwind classes.
+
+- **Accessibility**
+  - Semantic HTML, ARIA tags, and keyboard navigability throughout.
+
+---
+
+## Project Structure
+
+```
+src/
+  app/
+    elements/
+      components/
+        sidebar/           # Sidebar navigation
+        layout-container/  # Main layout wrapper
+      pages/
+        examples/          # Demo and theme reference
+    features/
+      components/
+        asset-flow/                # Asset flow diagram
+        contextual-risk-table/     # Risk table
+        risk-summary/              # Risk summary chart
+        remediation-techniques-card/ # Remediation cards
+        ... (other modular components)
+      pages/
+        dashboard-page/            # Main dashboard page
+      services/
+        asset.service.ts           # Asset data and pagination
+        sidebar-state.service.ts   # Sidebar open/minimized state
+    models/
+      asset.interface.ts           # Asset data model
+      ... (other interfaces)
+  styles/
+    _custom-tailwind.scss         # Design tokens and Tailwind customizations
+    _variables.scss               # SCSS variables for design tokens
+  public/
+    i18n/                         # Translation files (en.json, sw.json)
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- Angular CLI (`npm install -g @angular/cli`)
+- pnpm or npm
+
+### Install dependencies
+
+```bash
+pnpm install
+# or
+npm install
+```
+
+### Development server
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to `http://localhost:4200/`.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### Building for production
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Running tests
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Accessibility & Best Practices
 
-```bash
-ng e2e
-```
+- All navigation and interactive elements are keyboard accessible.
+- ARIA roles and labels are used for screen readers.
+- No inline styles; all styling is via classes and design tokens.
+- Fully responsive and mobile-friendly.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## Internationalization
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Switch languages instantly using the sidebar language switcher.
+- Add more languages by extending the `public/i18n/` JSON files.
+
+---
+
+## Theming & Design Tokens
+
+- All colors, font sizes, radii, and shadows are defined in `src/styles/_custom-tailwind.scss` and `src/styles/_variables.scss`.
+- Use these tokens for consistent, maintainable styling.
+
+---
+
+## Example & Theme Reference
+
+Visit `/examples` in the app for a live reference of all theme tokens, colors, radii, spacing, and typography.
+
+---
+
+## License
+
+MIT
