@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
-import { NgClass } from '@angular/common';
+import { NgClass, NgOptimizedImage } from '@angular/common';
 import { SidebarStateService } from '../../../features/services/sidebar-state.service';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [RouterModule, NgClass, TranslateModule],
+  imports: [RouterModule, NgClass, NgOptimizedImage, TranslateModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
