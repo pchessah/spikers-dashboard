@@ -14,26 +14,41 @@
     <ul class="flex flex-col gap-2 mt-4">
       @for (link of navLinks; let i = $index; track link.route) {
         <li class="relative flex items-center">
-          <a
-            [routerLink]="link.route"
-            class="flex items-center gap-3 py-3 p-2 rounded-lg transition-colors duration-200 focus:outline-none  flex-1 text-[var(--color-gray-soft-700)] text-[var(--text-spikers-sm2)]"
-            [ngClass]="{
-              'bg-[var(--color-spikers-green-bg-active)] text-[var(--color-spikers-green-active)] font-semibold': isActive(link.route),
-              'hover:bg-gray-100': !isActive(link.route),
-              'justify-center': sidebarState.isMinimized(),
-              'justify-start': !sidebarState.isMinimized()
-            }"
-            tabindex="0"
-            aria-current="isActive(link.route) ? 'page' : undefined"
-          >
-            <i [class]="link.icon + ' text-xl'" [ngClass]="isActive(link.route) ? 'text-[var(--color-spikers-green-active)]' : 'text-[var(--color-gray-soft-700)]'" aria-hidden="true"></i>
-            @if (!sidebarState.isMinimized()) {
-              <span class="font-spikers-primary font-spikers-regular leading-[22px] tracking-[0.01em] align-middle capitalize text-[var(--text-spikers-sm2)]">
-                {{ link.label | translate }}
-              </span>
+          @if (i === 0 && link.isHamburger) {
+            @if (sidebarState.isMinimized()) {
+              <button
+                class="flex items-center gap-3 py-3 p-2 rounded-lg transition-colors duration-200 focus:outline-none flex-1 text-[var(--color-gray-soft-700)] text-[var(--text-spikers-sm2)] justify-center hover:bg-[var(--color-spikers-grey-50)]"
+                (click)="toggleSidebar()"
+                tabindex="0"
+                aria-label="Open sidebar"
+              >
+                <img src="/icons/hamburger.svg" width="20" height="20" alt="Open sidebar" class="shrink-0" />
+              </button>
             }
-          </a>
-          @if (i === 0) {
+          } @else {
+            @if (link.route) {
+              <a
+                [routerLink]="link.route"
+                class="flex items-center gap-3 py-3 p-2 rounded-lg transition-colors duration-200 focus:outline-none flex-1 text-[var(--color-gray-soft-700)] text-[var(--text-spikers-sm2)]"
+                [ngClass]="{
+                  'bg-[var(--color-spikers-green-bg-active)] text-[var(--color-spikers-green-active)] font-semibold': isActive(link.route),
+                  'hover:bg-[var(--color-spikers-grey-50)]': !isActive(link.route),
+                  'justify-center': sidebarState.isMinimized(),
+                  'justify-start': !sidebarState.isMinimized()
+                }"
+                tabindex="0"
+                aria-current="isActive(link.route) ? 'page' : undefined"
+              >
+                <img [src]="'/icons/' + link.icon" width="20" height="20" alt="" class="shrink-0" />
+                @if (!sidebarState.isMinimized()) {
+                  <span class="font-spikers-primary font-spikers-regular leading-[22px] tracking-[0.01em] align-middle capitalize text-[var(--text-spikers-sm2)]">
+                    {{ link.label | translate }}
+                  </span>
+                }
+              </a>
+            }
+          }
+          @if (i === 1) {
             @if (!sidebarState.isMinimized()) {
               <div class="ml-2 flex items-center">
                 <button
@@ -42,19 +57,21 @@
                   aria-label="Collapse sidebar"
                   tabindex="0"
                 >
-                  <i class="pi pi-angle-left text-white text-base " aria-hidden="true"></i>
+                  <img src="/icons/close.svg" width="10.8" height="5.4" alt="Close sidebar" class="shrink-0" />
                 </button>
               </div>
             }
             @if (sidebarState.isMinimized()) {
-              <div class="ml-2 flex items-center">
+              <div class="ml-2 flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 <button
                   (click)="toggleSidebar()"
-                  class="w-8 h-8 flex items-center justify-center rounded-full shadow bg-[var(--color-spikers-green-darker)]"
+                  class="w-8 h-8 flex items-center justify-center rounded-full shadow bg-[var(--color-spikers-green-darker)] group"
                   aria-label="Expand sidebar"
                   tabindex="0"
                 >
-                  <i class="pi pi-angle-right text-white text-base" aria-hidden="true"></i>
+                  <span class="">
+                    <img src="/icons/open.svg" width="21.6" height="10.8" alt="Open sidebar" class="shrink-0" />
+                  </span>
                 </button>
               </div>
             }
@@ -66,41 +83,27 @@
 
   <div class="flex flex-col gap-2 mb-2">
     <a
-      class="flex items-center gap-3 p-2 rounded-lg cursor-pointer hover:bg-gray-100 w-full text-[var(--color-gray-soft-700)] text-[var(--text-spikers-sm2)]"
+      class="flex items-center gap-3 p-2 rounded-lg cursor-pointer hover:bg-[var(--color-spikers-grey-50)] w-full text-[var(--color-gray-soft-700)] text-[var(--text-spikers-sm2)]"
       [ngClass]="{ 'justify-center': sidebarState.isMinimized(), 'justify-start': !sidebarState.isMinimized() }"
       tabindex="0"
       aria-label="Notifications"
     >
-      <i class="pi pi-bell text-xl text-[var(--color-gray-soft-700)]"></i>
+      <img src="/icons/settings.svg" width="20" height="20" alt="" class="shrink-0" />
       @if (!sidebarState.isMinimized()) {
-        <span class="font-spikers-primary font-spikers-regular leading-[22px] tracking-[0.01em] align-middle capitalize text-[var(--text-spikers-sm2)]">{{ 'sidebar.notifications' | translate }}</span>
+        <span class="font-spikers-primary font-spikers-regular leading-[22px] tracking-[0.01em] align-middle capitalize text-[var(--text-spikers-sm2)]">Lorem</span>
       }
     </a>
     <!-- Language Switcher -->
     <a
-      class="flex items-center gap-2 p-2 rounded-lg cursor-pointer hover:bg-gray-100 w-full text-[var(--color-gray-soft-700)] text-[var(--text-spikers-sm2)]"
+      class="flex items-center gap-2 p-2 rounded-lg cursor-pointer hover:bg-[var(--color-spikers-grey-50)] w-full text-[var(--color-gray-soft-700)] text-[var(--text-spikers-sm2)]"
       [ngClass]="{ 'justify-center': sidebarState.isMinimized(), 'justify-start': !sidebarState.isMinimized() }"
       tabindex="0"
       (click)="switchLanguage(currentLang === 'en' ? 'sw' : 'en')"
       [attr.aria-label]="'Switch language to ' + (currentLang === 'en' ? 'Kiswahili' : 'English')"
     >
-      <i class="pi pi-language text-xl text-[var(--color-gray-soft-700)]"></i>
+      <img src="/icons/notification.svg" width="20" height="20" alt="" class="shrink-0" />
       @if (!sidebarState.isMinimized()) {
-        <span class="font-spikers-primary font-spikers-regular leading-[22px] tracking-[0.01em] align-middle capitalize text-[var(--text-spikers-sm2)]">
-          {{ 'sidebar.language' | translate }}
-        </span>
-        <span class="text-xs text-gray-500">({{ currentLang === 'en' ? 'English' : 'Kiswahili' }})</span>
-      }
-    </a>
-    <a
-      class="flex items-center gap-3 p-2 rounded-lg cursor-pointer hover:bg-gray-100 w-full text-[var(--color-gray-soft-700)] text-[var(--text-spikers-sm2)]"
-      [ngClass]="{ 'justify-center': sidebarState.isMinimized(), 'justify-start': !sidebarState.isMinimized() }"
-      tabindex="0"
-      aria-label="Help Center"
-    >
-      <i class="pi pi-question-circle text-xl text-[var(--color-gray-soft-700)]"></i>
-      @if (!sidebarState.isMinimized()) {
-        <span class="font-spikers-primary font-spikers-regular leading-[22px] tracking-[0.01em] align-middle capitalize text-[var(--text-spikers-sm2)]">{{ 'sidebar.help' | translate }}</span>
+        <span class="font-spikers-primary font-spikers-regular leading-[22px] tracking-[0.01em] align-middle capitalize text-[var(--text-spikers-sm2)]">Lorem</span>
       }
     </a>
   </div>
@@ -114,23 +117,23 @@
     <img src="/user.png" alt="User" class="rounded-full object-cover" width="48" height="48" [ngClass]="sidebarState.isMinimized() ? 'w-8 h-8' : 'w-12 h-12'" />
     @if (!sidebarState.isMinimized()) {
       <div class="flex-1 flex flex-col justify-center">
-        <span class="font-spikers-primary font-spikers-regular leading-[22px] tracking-[0.01em] capitalize text-[var(--text-spikers-sm2)]">{{ 'sidebar.firstname' | translate }}</span>
-        <span class="font-spikers-primary font-spikers-regular leading-[22px] tracking-[0.01em] capitalize text-[var(--text-spikers-sm2)]">{{ 'sidebar.lastname' | translate }}</span>
+        <span class="font-spikers-primary font-spikers-regular leading-[22px] tracking-[0.01em] capitalize text-[var(--text-spikers-sm2)]">Lorem</span>
+        <span class="font-spikers-primary font-spikers-regular leading-[22px] tracking-[0.01em] capitalize text-[var(--text-spikers-sm2)]">Lorem</span>
       </div>
       <button
-        class="ml-auto flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+        class="ml-auto flex items-center justify-center w-8 h-8 rounded-full hover:bg-[var(--color-spikers-grey-50)] focus:outline-none focus:ring-2 focus:ring-primary"
         aria-label="Logout"
       >
-        <i class="pi pi-sign-out text-base text-[var(--color-gray-soft-700)]"></i>
+        <img src="/icons/logout.svg" width="20" height="20" alt="Logout" class="shrink-0" />
       </button>
     }
     @if (sidebarState.isMinimized()) {
       <div class="flex flex-col items-center">
         <button
-          class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary mt-1"
+          class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-[var(--color-spikers-grey-50)] focus:outline-none focus:ring-2 focus:ring-primary mt-1"
           aria-label="Logout"
         >
-          <i class="pi pi-sign-out text-base text-[var(--color-gray-soft-900)]"></i>
+          <img src="/icons/logout.svg" width="20" height="20" alt="Logout" class="shrink-0" />
         </button>
       </div>
     }

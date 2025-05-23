@@ -20,10 +20,14 @@ export class SidebarComponent {
   }
 
   navLinks = [
-    { label: 'sidebar.dashboard', route: '/', icon: 'pi pi-home' },
-    { label: 'sidebar.reports', route: '/reports', icon: 'pi pi-chart-bar' },
-    { label: 'sidebar.sitemaps', route: '/sitemaps', icon: 'pi pi-sitemap' },
-    { label: 'sidebar.examples', route: '/examples', icon: 'pi pi-cog' },
+    { label: 'Lorem', icon: 'hamburger.svg', isHamburger: true },
+    { label: 'Lorem', route: '/lorem1', icon: 'dash.svg' },
+    { label: 'Lorem', route: '/lorem2', icon: 'threat-scenarios.svg' },
+    { label: 'Lorem', route: '/lorem', icon: 'inventory.svg' },
+    { label: 'Lorem', route: '/', icon: 'volner.svg' },
+    { label: 'Lorem', route: '/lorem5', icon: 'integration.svg' },
+    { label: 'Lorem', route: '/lorem6', icon: 'policy.svg' },
+    { label: 'Lorem', route: '/lorem7', icon: 'report.svg' },
   ];
 
   toggleSidebar() {
