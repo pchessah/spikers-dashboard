@@ -22,7 +22,7 @@ export class AssetFlowComponent {
   onNodeMouseEnter(event: MouseEvent) {
     this.showVulnPopover = true;
     const rect = (event.target as HTMLElement).getBoundingClientRect();
-    this.popoverX = rect.right + window.scrollX + 12; // 12px offset
+    this.popoverX = (rect.right + window.scrollX) - 5;
     this.popoverY = rect.top + window.scrollY;
   }
 
