@@ -17,11 +17,12 @@ export class CenterInformationPanelComponent {
 
   descriptionPanel = signal<InfoPanelData>({
     title: 'Description',
-    description: `The Data Center Dashboard provides real-time monitoring and management of critical infrastructure. It displays key metrics such as server health, network performance, power usage, and environmental conditions. With customizable alerts and visualizations, administrators can quickly identify and resolve issues, ensuring maximum uptime and efficiency. The dashboard integrates with various data sources, offering a unified view of operations. Its intuitive interface allows users to drill down into specific systems, track trends, and generate detailed reports. This tool is essential for maintaining optimal performance and security in modern data centers.`
+    description: `Lorem ipsum dolor sit amet consectetur. Aenean sodales pellentesque gravida nibh et magna faucibus. Dui commodo ut metus amet egestas habitant viverra. Quisque fusce senectus facilisis non diam leo nulla sem pellentesque. Sit in vel sed cursus metus sit fringilla vestibulum.`
   });
 
   extraPanel = signal<InfoPanelData>({
     title: 'Extra',
-    description: `Data centers are the backbone of digital infrastructure, supporting cloud services, enterprise applications, and online platforms. They require robust security, efficient cooling, and reliable power management. The dashboard helps operators manage these challenges by providing insights into resource utilization and potential risks. It also supports compliance with industry standards and helps plan for future expansion. By leveraging advanced analytics and automation, data centers can reduce operational costs, minimize downtime, and deliver consistent service to clients and users worldwide.`
+    description: `Lorem ipsum dolor sit amet consectetur. Tempus a id adipiscing fames egestas tellus dis pretium tempus. Justo nisl nisl lorem lectus id ornare. Rhoncus in egestas in amet porttitor pellentesque sit. Amet gravida integer velit felis. Eu consectetur interdum auctor sed aliquam. Eu pulvinar accumsan sed id. Duis a aliquam eu quisque commodo lectus. Lectus ipsum velit purus viverra vulputate viverra in nunc nulla. Euismod rhoncus mauris urna orci gravida sagittis netus. Amet mus in vel etiam. Interdum habitant congue massa in etiam sit. Commodo nibh viverra lobortis augue lorem quam lorem suspendisse.
+`
   });
 }

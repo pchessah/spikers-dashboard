@@ -11,28 +11,25 @@ import { RemediationTechniquesCardComponent } from '../remediation-techniques-ca
 export class RemediationTechniquesContainerComponent {
   remediationTechniques = signal<RemediationTechniqueCardData[]>([
     {
-      cardTitle: 'Infrastructure',
+      cardTitle: 'Lorem ipsum dolor sit',
       icon: 'pi pi-server',
-      title: 'Patch ',
-      subtitle: 'Critical Updates',
-      summary: 'Apply security patches promptly.',
-      description: 'Ensure all systems and applications are updated with the latest security patches to mitigate vulnerabilities and reduce risk of exploitation.'
-    },
+      title: 'Server ',
+      subtitle: 'Server',
+      summary: 'Lorem ipsum dolor sit amet consectetur.',
+      description: 'Lorem ipsum dolor sit amet consectetur. In laoreet elementum luctus odio. Id enim urna.' },
     {
-      cardTitle: 'Access Control',
+      cardTitle: 'Lorem ipsum dolor sit',
       icon: 'pi pi-lock',
-      title: 'Access',
-      subtitle: 'User Permissions',
-      summary: 'Restrict access to sensitive data.',
-      description: 'Implement strict access controls and regularly review user permissions to prevent unauthorized access to critical resources.'
-    },
+      title: 'Server ',
+      subtitle: 'Server',
+      summary: 'Lorem ipsum dolor sit amet consectetur.',
+      description: 'Lorem ipsum dolor sit amet consectetur. Quis viverra etiam pellentesque lectus semper in massa purus. Auctor aenean aenean senectus massa dignissim vehicula mi erat purus. Praesent scelerisque aliquet metus sagittis dictum sed sed. Sed venenatis sed urna quam.' },
     {
-      cardTitle: 'Data Protection',
+      cardTitle: 'Lorem ipsum dolor sit',
       icon: 'pi pi-database',
-      title: 'Data Backup',
-      subtitle: 'Disaster Recovery',
-      summary: 'Regularly backup important data.',
-      description: 'Schedule frequent backups and test recovery procedures to ensure data integrity and availability in case of incidents.'
-    }
+      title: 'Server ',
+      subtitle: 'Server',
+      summary: 'Lorem ipsum dolor sit amet consectetur.',
+      description: 'Lorem ipsum dolor sit amet consectetur. Nunc vitae tortor convallis vitae arcu. Magna.' }
   ]);
 }

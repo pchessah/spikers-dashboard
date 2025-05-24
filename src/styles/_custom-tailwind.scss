@@ -6,6 +6,7 @@
   --color-spikers-soft-grey: #525D73;
   --color-spikers-white: #FFFFFF;
   --color-spikers-black: #000000;
+  --color-spikers-black-soft: #030229;
   --color-gray-soft-700: #525D73;
   --color-spikers-green-bg-active: #E9FAF0;
   --color-slate-800: #334155;
@@ -66,6 +67,8 @@
 
   --text-spikers-xxs: 0.625rem; /* 10px */
   --text-spikers-xs: 0.75rem; /* 12px */
+  --text-spikers-xs2: 0.8125rem; /* 12.5px */
+  --text-spikers-xs3: 0.8125rem; /* 13px */
   --text-spikers-sm: 0.875rem; /* 14px */
   --text-spikers-sm2: 0.9375rem; /* 15px */
   --text-spikers-base: 1rem; /* 16px */
@@ -75,7 +78,6 @@
   --text-spikers-3xl: 1.875rem; /* 30px */
   --text-spikers-4xl: 2.25rem; /* 36px */
   --text-spikers-5xl: 3rem; /* 48px */
-  --text-spikers-xs2: 0.8125rem; /* 13px */
 
   --leading-spikers-tight: 1.25;
   --leading-spikers-normal: 1.5;
@@ -128,6 +130,7 @@
 .text-spikers-xxs { font-size: var(--text-spikers-xxs); }
 .text-spikers-xs { font-size: var(--text-spikers-xs); }
 .text-spikers-xs2 { font-size: var(--text-spikers-xs2); }
+.text-spikers-xs3 { font-size: var(--text-spikers-xs3); }
 .text-spikers-sm { font-size: var(--text-spikers-sm); }
 .text-spikers-sm2 { font-size: var(--text-spikers-sm2); }
 .text-spikers-base { font-size: var(--text-spikers-base); }
