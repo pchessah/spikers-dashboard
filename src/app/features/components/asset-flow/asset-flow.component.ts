@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ASSET_FLOW_NODES, ASSET_FLOW_EDGES, ASSET_FLOW_SHIELDS, AssetFlowNode, AssetFlowEdge, AssetFlowShield } from '../../data';
 import { VulnerabilitiesDrawerComponent } from '../vulnerabilities-drawer/vulnerabilities-drawer.component';
 
 @Component({
   selector: 'app-asset-flow',
   standalone: true,
-  imports: [CommonModule, VulnerabilitiesDrawerComponent],
+  imports: [CommonModule, NgOptimizedImage, VulnerabilitiesDrawerComponent],
   templateUrl: './asset-flow.component.html',
   styleUrls: ['./asset-flow.component.scss']
 })

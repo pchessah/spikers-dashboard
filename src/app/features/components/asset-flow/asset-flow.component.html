@@ -1,91 +1,89 @@
 <div class="w-full flex flex-col items-center gap-[10px]">
   <h2 class="text-[var(--color-spikers-green)] font-bold text-spikers-xl text-start w-full">Asset Flow</h2>
 
-  <div class="bg-[var(--color-spikers-grey-50)] p-4 rounded-[var(--radius-spikers-lg)] w-full">
+  <div class="bg-[var(--color-spikers-grey-50)] rounded-[var(--radius-spikers-lg)] w-full  py-2.5 px-4 gap-2.5 min-h-[307px] ">
 
-    <div class="w-full flex flex-col items-center relative min-h-[200px]">
-      <div class="w-full overflow-x-auto">
-        <div class="flex flex-row items-center justify-center gap-6 relative z-10 min-w-[700px]">
+    <div class="w-full flex flex-col items-center justify-center relative h-[229px] overflow-x-auto">
+
           <!-- Main flow nodes -->
-          <div class="flex flex-row items-center gap-3">
+          <div class="flex flex-row items-center gap-0 w-full">
             <!-- Node 1: Source -->
-            <div class="flex flex-col items-center"
-                 (mouseenter)="onNodeMouseEnter($event)"
-                 (mouseleave)="onNodeMouseLeave()">
-              <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-spikers-contextual-risk-bg)]">
-                <i class="pi pi-database text-[var(--color-spikers-critical)] text-2xl"></i>
-              </div>
-              <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Server Alpha</span>
-              <div *ngIf="showVulnPopover"
-                   class="fixed z-50 transition-opacity duration-200 bg-white rounded-[var(--radius-spikers-xxl,2rem)] shadow-spikers-lg"
-                   [ngStyle]="{ left: popoverX + 'px', top: popoverY + 'px' }"
-                   (mouseenter)="showVulnPopover = true"
+            <div class="px-[6.75px]">
+              <div class="flex flex-col items-center "
+                   (mouseenter)="onNodeMouseEnter($event)"
                    (mouseleave)="onNodeMouseLeave()">
-                <app-vulnerabilities-drawer></app-vulnerabilities-drawer>
+                <div class="relative flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-contextual-risk-bg)]">
+                  <img ngSrc="/icons/venetian-mask.svg" width="26" height="26" alt="Venetian Mask" />
+                  <img ngSrc="/icons/user-alt.svg" width="20" height="20" alt="Superscript User" class="absolute -top-1 -right-1" />
+                </div>
+                <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Loremipsumm</span>
+                <div *ngIf="showVulnPopover"
+                     class="fixed z-50 transition-opacity duration-200 bg-white rounded-[var(--radius-spikers-xxl,2rem)] shadow-spikers-lg"
+                     [ngStyle]="{ left: popoverX + 'px', top: popoverY + 'px' }"
+                     (mouseenter)="showVulnPopover = true"
+                     (mouseleave)="onNodeMouseLeave()">
+                  <app-vulnerabilities-drawer></app-vulnerabilities-drawer>
+                </div>
               </div>
             </div>
             <!-- Arrow -->
-            <svg class="mx-2" width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="2" y1="12" x2="30" y2="12" stroke="var(--color-spikers-blue)" stroke-width="2" />
-              <polygon points="30,12 24,8 24,16" fill="var(--color-spikers-blue)" />
-            </svg>
+            <img ngSrc="/icons/arrow2.svg" width="58.5" height="24" alt="Arrow 2"  />
             <!-- Node 2: Processing -->
-            <div class="flex flex-col items-center">
-              <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-spikers-blue-bg)]">
-                <i class="pi pi-cog text-[var(--color-spikers-blue)] text-2xl"></i>
+            <div class="px-[6.75px]">
+              <div class="flex flex-col items-center">
+                <div class="flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
+                  <img ngSrc="/icons/server.svg" width="26" height="26" alt="Server" />
+                </div>
+                <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Loremipsu</span>
               </div>
-              <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Workstation Beta</span>
             </div>
             <!-- Arrow -->
-            <svg class="mx-2" width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="2" y1="12" x2="30" y2="12" stroke="var(--color-spikers-blue)" stroke-width="2" />
-              <polygon points="30,12 24,8 24,16" fill="var(--color-spikers-blue)" />
-            </svg>
+            <img ngSrc="/icons/arrow2.svg" width="58.5" height="24" alt="Arrow 2"  />
             <!-- Node 3: Destination -->
-            <div class="flex flex-col items-center">
-              <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-spikers-blue-bg)]">
-                <i class="pi pi-server text-[var(--color-spikers-blue)] text-2xl"></i>
+            <div class="px-[6.75px]">
+              <div class="flex flex-col items-center">
+                <div class="flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
+                  <img ngSrc="/icons/server.svg" width="26" height="26" alt="Server" />
+                </div>
+                <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Loremipsu</span>
               </div>
-              <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Database Gamma</span>
             </div>
 
             <div class="flex flex-col items-center justify-center">
-              <!-- Pronged Arrow -->
-              <svg width="80" height="120" class="block" viewBox="0 0 80 120" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 60 h30" stroke="var(--color-spikers-blue)" stroke-width="2" />
-                <path d="M30 60 Q50 30 80 30" stroke="var(--color-spikers-blue)" stroke-width="2" fill="none" />
-                <path d="M30 60 Q50 90 80 90" stroke="var(--color-spikers-blue)" stroke-width="2" fill="none" />
-                <!-- Arrowheads -->
-                <polygon points="80,30 74,26 76,32" fill="var(--color-spikers-blue)" />
-                <polygon points="80,90 74,86 76,92" fill="var(--color-spikers-blue)" />
-              </svg>
+              <img ngSrc="/icons/arrow3.svg" width="105" height="24" alt="Arrow 3" />
 
             </div>
 
 
-            <div class="flex flex-col items-center justify-center min-w-[120px]">
-              <!-- User A (top) -->
-              <div class="flex flex-col items-center mb-8">
-                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-spikers-blue-bg)]">
-                  <i class="pi pi-user text-[var(--color-spikers-blue)] text-2xl"></i>
+            <div class="px-[6.75px] mt-3">
+              <div class="flex flex-col items-center justify-center min-w-[120px] gap-5">
+                <!-- User A (top) -->
+                <div class="flex flex-col items-center mb-0">
+                  <div class="relative flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
+                    <img ngSrc="/icons/server.svg" width="26" height="26" alt="Server" />
+                    <div class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[var(--color-spikers-red)] flex items-center justify-center">
+                      <img ngSrc="/icons/shield-critical.svg" width="10" height="13" alt="Critical Shield" />
+                    </div>
+                  </div>
+                  <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Loremipsumdolorsit</span>
+                  <span class="text-[10px] text-[var(--color-spikers-soft-grey)]">192.168.1.13</span>
                 </div>
-                <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Cloud Node Delta</span>
-                <span class="text-[10px] text-[var(--color-spikers-soft-grey)]">192.168.1.13</span>
-              </div>
-              <!-- User B (bottom) -->
-              <div class="flex flex-col items-center mt-8">
-                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-spikers-blue-bg)]">
-                  <i class="pi pi-user text-[var(--color-spikers-blue)] text-2xl"></i>
+                <!-- User B (bottom) -->
+                <div class="flex flex-col items-center mt-0">
+                  <div class="relative flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
+                    <img ngSrc="/icons/server.svg" width="26" height="26" alt="Server" />
+                    <div class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[var(--color-spikers-red)] flex items-center justify-center">
+                      <img ngSrc="/icons/shield-critical.svg" width="10" height="13" alt="Critical Shield" />
+                    </div>
+                  </div>
+                  <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Loremipsumdolorsit002</span>
+                  <span class="text-[10px] text-[var(--color-spikers-soft-grey)]">192.168.1.14</span>
                 </div>
-                <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Cloud Node Epsilon</span>
-                <span class="text-[10px] text-[var(--color-spikers-soft-grey)]">192.168.1.14</span>
               </div>
             </div>
           </div>
 
-        </div>
-      </div>
+
     </div>
 
     <hr class="border-t border-gray-200 my-2 w-full" />
@@ -93,8 +91,8 @@
     <div class="flex flex-col sm:flex-row gap-6 items-start mt-4">
       @for (shield of shields; track shield.label) {
       <div class="flex items-center gap-2">
-        <div class="flex items-center justify-center w-6 h-6 sm:w-6 sm:h-6 rounded-full" [ngClass]="shield.bgColor">
-          <i class="pi pi-shield text-white text-spikers-xs sm:text-spikers-xs"></i>
+        <div class="flex items-center justify-center w-[25px] h-[25px] rounded-full" [ngClass]="shield.bgColor">
+          <img ngSrc="/icons/shield-critical.svg" width="17.5" height="17.5" alt="Critical Shield" />
         </div>
         <span class="text-spikers-sm2 font-semibold" [ngClass]="shield.textColor">{{ shield.label }}</span>
       </div>
