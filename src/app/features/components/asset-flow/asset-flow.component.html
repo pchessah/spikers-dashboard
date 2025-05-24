@@ -10,19 +10,20 @@
             <!-- Node 1: Source -->
             <div class="px-[6.75px]">
               <div class="flex flex-col items-center "
-                   (mouseenter)="onNodeMouseEnter($event)"
-                   (mouseleave)="onNodeMouseLeave()">
+                   (mouseenter)="onNodeMouseEnter($event, 0)"
+                   (mouseleave)="onNodeMouseLeave(0)">
                 <div class="relative flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-contextual-risk-bg)]">
                   <img ngSrc="/icons/venetian-mask.svg" width="26" height="26" alt="Venetian Mask" />
                   <img ngSrc="/icons/user-alt.svg" width="20" height="20" alt="Superscript User" class="absolute -top-1 -right-1" />
                 </div>
                 <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Loremipsumm</span>
-                <div *ngIf="showVulnPopover"
+                <div *ngIf="popovers[0].show()"
                      class="fixed z-50 transition-opacity duration-200 bg-white rounded-[var(--radius-spikers-xxl,2rem)] shadow-spikers-lg"
-                     [ngStyle]="{ left: popoverX + 'px', top: popoverY + 'px' }"
-                     (mouseenter)="showVulnPopover = true"
-                     (mouseleave)="onNodeMouseLeave()">
-                  <app-vulnerabilities-drawer></app-vulnerabilities-drawer>
+                     [ngClass]="'sm:block ' + (isMobile() ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[95vw]' : '')"
+                     [ngStyle]="isMobile() ? {} : { left: popovers[0].x() + 'px', top: popovers[0].y() + 'px' }"
+                     (mouseenter)="onNodeMouseEnter($event, 0)"
+                     (mouseleave)="onNodeMouseLeave(0)">
+                  <app-vulnerabilities-drawer [identifier]="'node-0'"></app-vulnerabilities-drawer>
                 </div>
               </div>
             </div>
@@ -30,35 +31,56 @@
             <img ngSrc="/icons/arrow2.svg" width="58.5" height="24" alt="Arrow 2"  />
             <!-- Node 2: Processing -->
             <div class="px-[6.75px]">
-              <div class="flex flex-col items-center">
+              <div class="flex flex-col items-center "
+                   (mouseenter)="onNodeMouseEnter($event, 1)"
+                   (mouseleave)="onNodeMouseLeave(1)">
                 <div class="flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
                   <img ngSrc="/icons/server.svg" width="26" height="26" alt="Server" />
                 </div>
                 <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Loremipsu</span>
+                <div *ngIf="popovers[1].show()"
+                     class="fixed z-50 transition-opacity duration-200 bg-white rounded-[var(--radius-spikers-xxl,2rem)] shadow-spikers-lg"
+                     [ngClass]="'sm:block ' + (isMobile() ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[95vw]' : '')"
+                     [ngStyle]="isMobile() ? {} : { left: popovers[1].x() + 'px', top: popovers[1].y() + 'px' }"
+                     (mouseenter)="onNodeMouseEnter($event, 1)"
+                     (mouseleave)="onNodeMouseLeave(1)">
+                  <app-vulnerabilities-drawer [identifier]="'node-1'"></app-vulnerabilities-drawer>
+                </div>
               </div>
             </div>
             <!-- Arrow -->
             <img ngSrc="/icons/arrow2.svg" width="58.5" height="24" alt="Arrow 2"  />
             <!-- Node 3: Destination -->
             <div class="px-[6.75px]">
-              <div class="flex flex-col items-center">
+              <div class="flex flex-col items-center "
+                   (mouseenter)="onNodeMouseEnter($event, 2)"
+                   (mouseleave)="onNodeMouseLeave(2)">
                 <div class="flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
                   <img ngSrc="/icons/server.svg" width="26" height="26" alt="Server" />
                 </div>
                 <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Loremipsu</span>
+                <div *ngIf="popovers[2].show()"
+                     class="fixed z-50 transition-opacity duration-200 bg-white rounded-[var(--radius-spikers-xxl,2rem)] shadow-spikers-lg"
+                     [ngClass]="'sm:block ' + (isMobile() ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[95vw]' : '')"
+                     [ngStyle]="isMobile() ? {} : { left: popovers[2].x() + 'px', top: popovers[2].y() + 'px' }"
+                     (mouseenter)="onNodeMouseEnter($event, 2)"
+                     (mouseleave)="onNodeMouseLeave(2)">
+                  <app-vulnerabilities-drawer [identifier]="'node-2'"></app-vulnerabilities-drawer>
+                </div>
               </div>
             </div>
 
             <div class="flex flex-col items-center justify-center">
               <img ngSrc="/icons/arrow3.svg" width="105" height="24" alt="Arrow 3" />
-
             </div>
 
 
             <div class="px-[6.75px] mt-3">
               <div class="flex flex-col items-center justify-center min-w-[120px] gap-5">
                 <!-- User A (top) -->
-                <div class="flex flex-col items-center mb-0">
+                <div class="flex flex-col items-center mb-0"
+                     (mouseenter)="onNodeMouseEnter($event, 3)"
+                     (mouseleave)="onNodeMouseLeave(3)">
                   <div class="relative flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
                     <img ngSrc="/icons/server.svg" width="26" height="26" alt="Server" />
                     <div class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[var(--color-spikers-red)] flex items-center justify-center">
@@ -67,9 +89,19 @@
                   </div>
                   <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Loremipsumdolorsit</span>
                   <span class="text-[10px] text-[var(--color-spikers-soft-grey)]">192.168.1.13</span>
+                  <div *ngIf="popovers[3].show()"
+                       class="fixed z-50 transition-opacity duration-200 bg-white rounded-[var(--radius-spikers-xxl,2rem)] shadow-spikers-lg"
+                       [ngClass]="'sm:block ' + (isMobile() ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[95vw]' : '')"
+                       [ngStyle]="isMobile() ? {} : { left: popovers[3].x() + 'px', top: popovers[3].y() + 'px' }"
+                       (mouseenter)="onNodeMouseEnter($event, 3)"
+                       (mouseleave)="onNodeMouseLeave(3)">
+                    <app-vulnerabilities-drawer [identifier]="'node-3'"></app-vulnerabilities-drawer>
+                  </div>
                 </div>
                 <!-- User B (bottom) -->
-                <div class="flex flex-col items-center mt-0">
+                <div class="flex flex-col items-center mt-0"
+                     (mouseenter)="onNodeMouseEnter($event, 4)"
+                     (mouseleave)="onNodeMouseLeave(4)">
                   <div class="relative flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
                     <img ngSrc="/icons/server.svg" width="26" height="26" alt="Server" />
                     <div class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[var(--color-spikers-red)] flex items-center justify-center">
@@ -78,6 +110,14 @@
                   </div>
                   <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Loremipsumdolorsit002</span>
                   <span class="text-[10px] text-[var(--color-spikers-soft-grey)]">192.168.1.14</span>
+                  <div *ngIf="popovers[4].show()"
+                       class="fixed z-50 transition-opacity duration-200 bg-white rounded-[var(--radius-spikers-xxl,2rem)] shadow-spikers-lg"
+                       [ngClass]="'sm:block ' + (isMobile() ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[95vw]' : '')"
+                       [ngStyle]="isMobile() ? {} : { left: popovers[4].x() + 'px', top: popovers[4].y() + 'px' }"
+                       (mouseenter)="onNodeMouseEnter($event, 4)"
+                       (mouseleave)="onNodeMouseLeave(4)">
+                    <app-vulnerabilities-drawer [identifier]="'node-4'"></app-vulnerabilities-drawer>
+                  </div>
                 </div>
               </div>
             </div>
