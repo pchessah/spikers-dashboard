@@ -1,10 +1,10 @@
-<div class="rounded-2xl border border-[var(--color-spikers-grey-bg)] shadow-[var(--shadow-spikers-2)] w-full min-h-full h-full overflow-hidden px-6 pt-6 pb-6">
+<div class="rounded-2xl border border-[var(--color-spikers-grey-bg)] shadow-[var(--shadow-spikers-2)] w-full min-h-full h-full overflow-hidden">
   <div class="block w-full overflow-x-auto">
     <table class="w-full min-w-[400px] border-collapse text-[1.05rem]">
       <thead>
-        <tr>
-          <th scope="col" class="text-left text-spikers-sm2 font-semibold text-[var(--color-spikers-title)] px-4 py-2">Asset</th>
-          <th scope="col" class="text-left text-spikers-sm2 font-semibold text-[var(--color-spikers-title)] px-4 py-2">Contextual risk</th>
+        <tr class="py-4 px-2.5">
+          <th scope="col" class="font-normal text-left text-spikers-xs3  text-[var(--color-spikers-divider)] py-3 px-6">Asset</th>
+          <th scope="col" class="font-normal text-left text-spikers-xs3  text-[var(--color-spikers-divider)] py-3 px-6">Contextual risk</th>
         </tr>
       </thead>
       <tbody>
@@ -12,21 +12,21 @@
         @for (row of paginatedData(); track row; let i = $index) {
           <tr class="align-top border-b border-[var(--color-spikers-grey-bg)]" [class.border-b-0]="i === paginatedData().length - 1">
             <!-- Asset column -->
-            <td class="px-4 py-2">
+            <td class="py-4 px-2.5">
               <div class="flex items-center gap-4">
                 <div class="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-spikers-blue-bg)]">
-                  <i [class]="row.icon + ' text-[var(--color-spikers-blue)] text-xl'" aria-hidden="true"></i>
+                  <img ngSrc="{{ row.icon }}" width="24" height="24" alt="Asset Icon" />
                 </div>
                 <div class="flex flex-col">
-                  <span class="text-spikers-xs2 font-semibold text-[var(--color-spikers-soft-grey)] fw-spikers-semibold font-semibold">{{ row.assetName }}</span>
-                  <span class="text-spikers-xxs fw-spikers-medium">{{ row.ip }}</span>
+                  <span class="text-spikers-xs3 font-semibold text-[var(--color-spikers-soft-grey)] fw-spikers-semibold font-semibold">{{ row.assetName }}</span>
+                  <span class="text-spikers-xxxs fw-spikers-medium">{{ row.ip }}</span>
                 </div>
               </div>
             </td>
             <!-- Contextual risk column -->
-            <td class="px-4 py-2">
+            <td class="py-4 px-6.5">
               <span
-                class="inline-block rounded-full px-4 py-1 text-spikers-sm2 contextual-risk-pill font-semibold"
+                class=" rounded-full py-1 px-4 gap-2.5 text-spikers-sm2 contextual-risk-pill font-bold"
                 [ngStyle]="{
                   'background-color': riskBgColor(row.contextualRisk),
                   color: riskTextColor(row.contextualRisk)
@@ -40,17 +40,17 @@
       </tbody>
       <tfoot>
         <tr><td colspan="2" class="p-0"><div class="border-t border-[var(--color-spikers-grey-bg)]"></div></td></tr>
-        <tr>
-          <td colspan="2" class="px-4 py-2">
-            <div class="flex items-center justify-center gap-2">
-              <button (click)="prevPage()" [disabled]="page() === 1" class="disabled:opacity-50">
-                <i class="pi pi-angle-left text-[var(--color-spikers-blue)] text-lg"></i>
+        <tr >
+          <td colspan="2" class="py-4 px-2.5" >
+            <div class="flex items-center justify-center gap-2.5">
+              <button (click)="prevPage()" [disabled]="page() === 1" class="disabled:opacity-50 opacity-100 cursor-pointer">
+                <img ngSrc="/icons/chevron_left.svg" width="6" height="10" alt="Previous" />
               </button>
-              <span class="text-spikers-xs2 text-[var(--color-spikers-soft-grey)]">
+              <span class="font-normal text-spikers-xs2 text-[var(--color-spikers-soft-grey)]">
                 Showing{{ (page() - 1) * pageSize + 1 }}-{{ min(page() * pageSize, data().length) }} of {{ data().length }}
               </span>
-              <button (click)="nextPage()" [disabled]="page() === totalPages()" class="disabled:opacity-50">
-                <i class="pi pi-angle-right text-[var(--color-spikers-blue)] text-lg"></i>
+              <button (click)="nextPage()" [disabled]="page() === totalPages()" class="disabled:opacity-50 opacity-100 cursor-pointer">
+                <img ngSrc="/icons/chevron_right.svg" width="6" height="10" alt="Next" />
               </button>
             </div>
           </td>

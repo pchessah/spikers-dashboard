@@ -1,10 +1,17 @@
 import { Asset } from "../../models/asset.interface";
 
 export const ASSET_DATA: Asset[] = [
-  { icon: 'pi pi-server', assetName: 'Server Alpha', ip: '192.168.1.10', contextualRisk: 'Critical' },
-  { icon: 'pi pi-desktop', assetName: 'Workstation Beta', ip: '192.168.1.11', contextualRisk: 'Critical' },
-  { icon: 'pi pi-database', assetName: 'Database Gamma', ip: '192.168.1.12', contextualRisk: 'Warning' },
-  { icon: 'pi pi-cloud', assetName: 'Cloud Node Delta', ip: '192.168.1.13', contextualRisk: 'Safe' }
+  { icon: '/icons/server.svg', assetName: 'Loremipsumdolorsit', ip: '192.168.1.10', contextualRisk: 'Critical' },
+  { icon: '/icons/server.svg', assetName: 'Loremipsumdolorsit002', ip: '192.168.1.11', contextualRisk: 'Critical' },
+  { icon: '/icons/server.svg', assetName: 'Loremipsumdolorsit003', ip: '192.168.1.12', contextualRisk: 'Warning' },
+  { icon: '/icons/server.svg', assetName: 'Loremipsumdolorsit004', ip: '192.168.1.13', contextualRisk: 'Safe' },
+  { icon: '/icons/server.svg', assetName: 'Loremipsumdolorsit005', ip: '192.168.1.14', contextualRisk: 'Safe' },
+  { icon: '/icons/server.svg', assetName: 'Loremipsumdolorsit006', ip: '192.168.1.15', contextualRisk: 'Safe' },
+  { icon: '/icons/server.svg', assetName: 'Loremipsumdolorsit007', ip: '192.168.1.16', contextualRisk: 'Warning' },
+  { icon: '/icons/server.svg', assetName: 'Loremipsumdolorsit008', ip: '192.168.1.17', contextualRisk: 'Critical' },
+  { icon: '/icons/server.svg', assetName: 'Loremipsumdolorsit009', ip: '192.168.1.18', contextualRisk: 'Critical' },
+  { icon: '/icons/server.svg', assetName: 'Loremipsumdolorsit010', ip: '192.168.1.19', contextualRisk: 'Safe' },
+
 ];
 
 export interface AssetFlowNode {

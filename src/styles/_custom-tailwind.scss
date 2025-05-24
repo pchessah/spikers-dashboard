@@ -65,19 +65,20 @@
   --font-weight-spikers-semibold: 600;
   --font-weight-spikers-bold: 700;
 
-  --text-spikers-xxs: 0.625rem; /* 10px */
-  --text-spikers-xs: 0.75rem; /* 12px */
-  --text-spikers-xs2: 0.8125rem; /* 12.5px */
-  --text-spikers-xs3: 0.8125rem; /* 13px */
-  --text-spikers-sm: 0.875rem; /* 14px */
-  --text-spikers-sm2: 0.9375rem; /* 15px */
-  --text-spikers-base: 1rem; /* 16px */
-  --text-spikers-lg: 1.125rem; /* 18px */
-  --text-spikers-xl: 1.25rem; /* 20px */
-  --text-spikers-2xl: 1.5rem; /* 24px */
-  --text-spikers-3xl: 1.875rem; /* 30px */
-  --text-spikers-4xl: 2.25rem; /* 36px */
-  --text-spikers-5xl: 3rem; /* 48px */
+  --text-spikers-xxxs: text-[9.45px]
+  --text-spikers-xxs: text-[10px]
+  --text-spikers-xs: text-xs
+  --text-spikers-xs2: text-[12.5px]
+  --text-spikers-xs3: text-[13px]
+  --text-spikers-sm: text-sm
+  --text-spikers-sm2: text-[15px]
+  --text-spikers-base: text-base
+  --text-spikers-lg: text-lg
+  --text-spikers-xl: text-xl
+  --text-spikers-2xl: text-2xl
+  --text-spikers-3xl: text-3xl
+  --text-spikers-4xl: text-4xl
+  --text-spikers-5xl: text-5xl
 
   --leading-spikers-tight: 1.25;
   --leading-spikers-normal: 1.5;
@@ -140,7 +141,7 @@
 .text-spikers-3xl { font-size: var(--text-spikers-3xl); }
 .text-spikers-4xl { font-size: var(--text-spikers-4xl); }
 .text-spikers-5xl { font-size: var(--text-spikers-5xl); }
-
+.text-spikers-xxxs { font-size: var(--text-spikers-xxxs); }
 
 .fw-spikers-medium { font-weight: var(--font-weight-spikers-medium); }
 .fw-spikers-bold { font-weight: var(--font-weight-spikers-bold); }

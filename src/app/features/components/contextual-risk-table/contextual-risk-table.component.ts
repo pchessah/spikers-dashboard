@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { AssetService } from '../../services/asset.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-contextual-risk-table',
-  imports: [CommonModule],
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './contextual-risk-table.component.html',
   styleUrl: './contextual-risk-table.component.scss'
 })
