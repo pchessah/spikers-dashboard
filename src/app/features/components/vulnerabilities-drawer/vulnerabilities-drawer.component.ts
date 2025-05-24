@@ -9,4 +9,5 @@ import { Component, input } from '@angular/core';
 })
 export class VulnerabilitiesDrawerComponent {
   identifier = input<string>('');
+  altText = 'Lorem "ipsum"'
 }
