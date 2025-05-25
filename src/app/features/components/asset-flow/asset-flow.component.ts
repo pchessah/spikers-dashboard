@@ -25,9 +25,9 @@ export class AssetFlowComponent {
 
   private readonly drawerWidth = 460;
   private readonly popoverHeight = 180;
-  private readonly popoverVerticalOffsetAbove = 230; // for nodes 3 and 4
-  private readonly popoverHorizontalOffsetRight = 25; // for nodes 0,1,2
-  private readonly popoverVerticalOffsetRight = 35; // for nodes 0,1,2
+  private readonly popoverVerticalOffsetAbove = 230;
+  private readonly popoverHorizontalOffsetRight = 25;
+  private readonly popoverVerticalOffsetRight = 35;
 
   onNodePopoverEnter(event: Event, idx: number) {
     const mouseEvent = event as MouseEvent;
@@ -36,7 +36,6 @@ export class AssetFlowComponent {
         popover.show.set(true);
         const rect = (mouseEvent.target as HTMLElement).getBoundingClientRect();
         if (idx === 3 || idx === 4) {
-          // Position popover above and centered on the node, but move it lower (closer to the node)
           popover.x.set(rect.left + window.scrollX + rect.width / 2 - this.drawerWidth / 2);
           popover.y.set(rect.top + window.scrollY - this.popoverHeight + this.popoverVerticalOffsetAbove);
         } else {
