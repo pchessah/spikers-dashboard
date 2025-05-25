@@ -2,11 +2,13 @@ import { Component, signal } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ASSET_FLOW_NODES, ASSET_FLOW_EDGES, ASSET_FLOW_SHIELDS, AssetFlowNode, AssetFlowEdge, AssetFlowShield } from '../../data';
 import { VulnerabilitiesDrawerComponent } from '../vulnerabilities-drawer/vulnerabilities-drawer.component';
+import { NodePopoverTriggerDirective } from '../../directives/node-popover-trigger/node-popover-trigger.directive';
+
 
 @Component({
   selector: 'app-asset-flow',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, VulnerabilitiesDrawerComponent],
+  imports: [CommonModule, NgOptimizedImage, VulnerabilitiesDrawerComponent, NodePopoverTriggerDirective],
   templateUrl: './asset-flow.component.html',
   styleUrls: ['./asset-flow.component.scss']
 })
@@ -21,29 +23,33 @@ export class AssetFlowComponent {
     y: signal(0)
   }));
 
+  private readonly drawerWidth = 460;
+  private readonly popoverHeight = 180;
+  private readonly popoverVerticalOffsetAbove = 230; // for nodes 3 and 4
+  private readonly popoverHorizontalOffsetRight = 25; // for nodes 0,1,2
+  private readonly popoverVerticalOffsetRight = 35; // for nodes 0,1,2
 
-  private drawerWidth = 460;
-
-  onNodeMouseEnter(event: MouseEvent, idx: number) {
+  onNodePopoverEnter(event: Event, idx: number) {
+    const mouseEvent = event as MouseEvent;
     this.popovers.forEach((popover, i) => {
       if (i === idx) {
         popover.show.set(true);
-        const rect = (event.target as HTMLElement).getBoundingClientRect();
+        const rect = (mouseEvent.target as HTMLElement).getBoundingClientRect();
         if (idx === 3 || idx === 4) {
-          // Show to the left of the node
-          popover.x.set(rect.left + window.scrollX - this.drawerWidth + 5);
+          // Position popover above and centered on the node, but move it lower (closer to the node)
+          popover.x.set(rect.left + window.scrollX + rect.width / 2 - this.drawerWidth / 2);
+          popover.y.set(rect.top + window.scrollY - this.popoverHeight + this.popoverVerticalOffsetAbove);
         } else {
-          // Show to the right of the node
-          popover.x.set((rect.right + window.scrollX) - 12);
+          popover.x.set((rect.right + window.scrollX) - this.popoverHorizontalOffsetRight);
+          popover.y.set(rect.top + window.scrollY + this.popoverVerticalOffsetRight);
         }
-        popover.y.set(rect.top + window.scrollY);
       } else {
         popover.show.set(false);
       }
     });
   }
 
-  onNodeMouseLeave(idx: number) {
+  onNodePopoverLeave(idx: number) {
     this.popovers[idx].show.set(false);
   }
 
