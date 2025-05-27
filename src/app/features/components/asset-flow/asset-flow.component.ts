@@ -88,6 +88,6 @@ export class AssetFlowComponent {
   }
 
   isMobile() {
-    return window.innerWidth <= 640;
+    return window.innerWidth < 768;
   }
 }
