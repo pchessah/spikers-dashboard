@@ -23,13 +23,13 @@ import { Node3Component } from "../node3/node3.component";
 })
 export class RightInformationPanelComponent {
   visible = false;
-  currentNode: any;
+  currentNode: number = 0;
 
   toggleDrawer() {
     this.visible = !this.visible;
   }
 
-  showInfo(info: any) {
+  showInfo(info: number) {
     this.visible = true;
     this.currentNode = info;
   }

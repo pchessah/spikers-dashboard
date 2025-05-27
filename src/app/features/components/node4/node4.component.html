@@ -1,26 +1,26 @@
-<div class="rounded-[var(--radius-spikers-xxl)] flex flex-col gap-[1.25rem] p-[0.625rem] pr-[1rem] pb-[0.625rem] pl-[1rem]">
+<div class="rounded-[var(--radius-spikers-xxl)] flex flex-col gap-2 p-2 pr-4 pb-2 pl-4 sm:gap-[1.25rem] sm:p-[0.625rem] sm:pr-[1rem] sm:pb-[0.625rem] sm:pl-[1rem]">
   <!-- Row 1 -->
-  <div class="flex flex-row items-center gap-[1.25rem]">
-    <div class="relative flex items-center justify-center w-[1.855rem] h-[1.855rem] rounded-full bg-[var(--color-spikers-blue-bg)]">
-      <img ngSrc="/icons/server.svg" width="19.69" height="19.69" alt="Server" />
-      <div class="absolute -top-1 -right-1 w-[0.901rem] h-[0.895rem] rounded-full bg-[var(--color-spikers-red)] flex items-center justify-center">
-        <img ngSrc="/icons/shield-critical.svg" width="9.61" height="12.02" alt="Critical Shield" />
+  <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-[1.25rem]">
+    <div class="relative flex items-center justify-center w-8 h-8 sm:w-[1.855rem] sm:h-[1.855rem] rounded-full bg-[var(--color-spikers-blue-bg)]">
+      <img ngSrc="/icons/server.svg" width="16" height="16" alt="Server" class="sm:w-[19.69px] sm:h-[19.69px] w-4 h-4" />
+      <div class="absolute -top-1 -right-1 w-4 h-4 sm:w-[0.901rem] sm:h-[0.895rem] rounded-full bg-[var(--color-spikers-red)] flex items-center justify-center">
+        <img ngSrc="/icons/shield-critical.svg" width="8" height="10" alt="Critical Shield" class="sm:w-[9.61px] sm:h-[12.02px] w-2 h-2.5" />
       </div>
     </div>
-    <div class="flex flex-col justify-between h-[1.855rem]">
-      <span class="text-spikers-xs3 font-semibold text-[var(--color-gray-soft-700)] flex items-center">Loremipsumdolorsit</span>
-      <span class="font-normal text-spikers-xxxs text-[var(--color-spikers-subtitle)]">192.168.1.1</span>
+    <div class="flex flex-col justify-between h-8 sm:h-[1.855rem]">
+      <span class="text-xs sm:text-spikers-xs3 font-semibold text-[var(--color-gray-soft-700)] flex items-center">Loremipsumdolorsit</span>
+      <span class="font-normal text-[10px] sm:text-spikers-xxxs text-[var(--color-spikers-subtitle)]">192.168.1.1</span>
     </div>
   </div>
   <!-- Row 2 -->
-  <div class="flex flex-row items-center gap-2">
-    <img ngSrc="/icons/receipt-text.svg" width="15" height="15" alt="Receipt" />
-    <span class="text-spikers-xs3 font-semibold text-[var(--color-gray-soft-700)] flex items-center">Lorem</span>
-    <span class="text-spikers-xs3 font-semibold text-[var(--color-spikers-yellow-600)] flex items-center">{{altText}}</span>
+  <div class="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+    <img ngSrc="/icons/receipt-text.svg" width="13" height="13" alt="Receipt" class="sm:w-[15px] sm:h-[15px] w-[13px] h-[13px]" />
+    <span class="text-xs sm:text-spikers-xs3 font-semibold text-[var(--color-gray-soft-700)] flex items-center">Lorem</span>
+    <span class="text-xs sm:text-spikers-xs3 font-semibold text-[var(--color-spikers-yellow-600)] flex items-center">{{altText}}</span>
   </div>
   <!-- Row 3 -->
-  <div class="flex flex-row items-center gap-2">
-    <span class="text-spikers-xs3 font-semibold text-[var(--color-gray-soft-700)] flex items-center">Loremipsum</span>
-    <span class="inline-block rounded-[var(--radius-spikers-sm)] bg-[var(--color-spikers-blue-50)] text-[var(--color-spikers-blue-700)] px-4 py-1 font-semibold text-spikers-xs2">lorem 1234,5678</span>
+  <div class="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+    <span class="text-xs sm:text-spikers-xs3 font-semibold text-[var(--color-gray-soft-700)] flex items-center">Loremipsum</span>
+    <span class="inline-block rounded-[var(--radius-spikers-sm)] bg-[var(--color-spikers-blue-50)] text-[var(--color-spikers-blue-700)] px-2 py-0.5 sm:px-4 sm:py-1 font-semibold text-[10px] sm:text-spikers-xs2">lorem 1234,5678</span>
   </div>
 </div>
