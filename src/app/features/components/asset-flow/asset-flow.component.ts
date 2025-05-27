@@ -6,7 +6,7 @@ import { NodePopoverTriggerDirective } from '../../directives/node-popover-trigg
 import { Node4Component } from '../node4/node4.component';
 import { Node3Component } from "../node3/node3.component";
 import { Node2Component } from "../node2/node2.component";
-  import { Node1Component } from "../node1/node1.component";
+import { Node1Component } from "../node1/node1.component";
 import { NodeInitialComponent } from '../node-initial/node-initial.component';
 @Component({
   selector: 'app-asset-flow',
@@ -24,16 +24,12 @@ import { NodeInitialComponent } from '../node-initial/node-initial.component';
   styleUrls: ['./asset-flow.component.scss']
 })
 export class AssetFlowComponent {
-  @Output() drawerContentEmitted = new EventEmitter<TemplateRef<unknown>>();
+  @Output() drawerContentEmitted = new EventEmitter<number>();
   shields: AssetFlowShield[] = ASSET_FLOW_SHIELDS;
   nodes: AssetFlowNode[] = ASSET_FLOW_NODES;
   edges: AssetFlowEdge[] = ASSET_FLOW_EDGES;
   altText = 'Lorem "ipsum"';
 
-  @ViewChild('node1Template') node1Template!: TemplateRef<unknown>;
-  @ViewChild('node2Template') node2Template!: TemplateRef<unknown>;
-  @ViewChild('node3Template') node3Template!: TemplateRef<unknown>;
-  @ViewChild('node4Template') node4Template!: TemplateRef<unknown>;
 
   popovers = this.nodes.map(() => ({
     show: signal(false),
@@ -51,16 +47,16 @@ export class AssetFlowComponent {
     if (this.isMobile()) {
       switch (idx) {
         case 0:
-          this.drawerContentEmitted.emit(this.node1Template);
+          this.drawerContentEmitted.emit(0);
           break;
         case 1:
-          this.drawerContentEmitted.emit(this.node2Template);
+          this.drawerContentEmitted.emit(1);
           break;
         case 2:
-          this.drawerContentEmitted.emit(this.node3Template);
+          this.drawerContentEmitted.emit(2);
           break;
         case 3:
-          this.drawerContentEmitted.emit(this.node4Template);
+          this.drawerContentEmitted.emit(3);
           break;
       }
       this.popovers[idx].show.set(false);
@@ -68,7 +64,6 @@ export class AssetFlowComponent {
   }
 
   onNodePopoverEnter(event: Event, idx: number) {
-
     const mouseEvent = event as MouseEvent;
     this.popovers.forEach((popover, i) => {
       if (i === idx) {
@@ -78,6 +73,7 @@ export class AssetFlowComponent {
           popover.x.set(rect.left + window.scrollX + rect.width / 2 - this.drawerWidth / 2);
           popover.y.set(rect.top + window.scrollY - this.popoverHeight + this.popoverVerticalOffsetAbove);
         } else {
+          popover.show.set(true);
           popover.x.set((rect.right + window.scrollX) - this.popoverHorizontalOffsetRight);
           popover.y.set(rect.top + window.scrollY + this.popoverVerticalOffsetRight);
         }

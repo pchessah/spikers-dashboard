@@ -1,7 +1,7 @@
 <div class="w-full flex flex-col gap-5 ">
   <h2 class="text-[var(--color-spikers-title)] font-semibold text-spikers-sm2 mb-1">Lorem ipsum dolor sit</h2>
   <div class="flex flex-col gap-5">
-    @for (technique of remediationTechniques(); track technique.title) {
+    @for (technique of remediationTechniques(); track $index) {
     <app-remediation-techniques-card [technique]="technique"></app-remediation-techniques-card>
     }
   </div>
