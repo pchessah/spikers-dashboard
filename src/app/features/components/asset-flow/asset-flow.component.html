@@ -9,7 +9,7 @@
       <!-- Main flow nodes -->
       <div class="flex flex-row items-center gap-0 w-full justify-center">
         <!-- Node 1: Source -->
-        <div class="px-[6.75px]" appNodePopoverTrigger (nodePopoverEnter)="onNodePopoverEnter($event, 0)"
+        <div class="px-[6.75px]" appNodePopoverTrigger (click)="onNodeClick(0)" (nodePopoverEnter)="onNodePopoverEnter($event, 0)"
           (nodePopoverLeave)="onNodePopoverLeave(0)">
           <div class="flex flex-col items-center ">
             <div
@@ -23,14 +23,22 @@
               class="fixed z-50 transition-opacity duration-200 bg-white rounded-[var(--radius-spikers-xxl,2rem)] shadow-spikers-lg"
               [ngClass]="'sm:block ' + (isMobile() ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[95vw]' : '')"
               [ngStyle]="isMobile() ? {} : { left: popovers[0].x() + 'px', top: popovers[0].y() + 'px' }">
-              <app-vulnerabilities-drawer [identifier]="'node-0'"></app-vulnerabilities-drawer>
+
+
+              <app-vulnerabilities-drawer  [identifier]="'node-0'">
+                <ng-template #node0Template>
+                  <app-node-initial></app-node-initial>
+                </ng-template>
+                <ng-container *ngTemplateOutlet="node0Template"></ng-container>
+              </app-vulnerabilities-drawer>
+
             </div>
           </div>
         </div>
         <!-- Arrow -->
         <img ngSrc="/icons/arrow2.svg" width="58.5" height="24" alt="Arrow 2" />
         <!-- Node 2: Processing -->
-        <div class="px-[6.75px]" appNodePopoverTrigger (nodePopoverEnter)="onNodePopoverEnter($event, 1)"
+        <div class="px-[6.75px]" appNodePopoverTrigger (click)="onNodeClick(1)" (nodePopoverEnter)="onNodePopoverEnter($event, 1)"
           (nodePopoverLeave)="onNodePopoverLeave(1)">
           <div class="flex flex-col items-center ">
             <div
@@ -42,14 +50,19 @@
               class="fixed z-50 transition-opacity duration-200 bg-white rounded-[var(--radius-spikers-xxl,2rem)] shadow-spikers-lg"
               [ngClass]="'sm:block ' + (isMobile() ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[95vw]' : '')"
               [ngStyle]="isMobile() ? {} : { left: popovers[1].x() + 'px', top: popovers[1].y() + 'px' }">
-              <app-vulnerabilities-drawer [identifier]="'node-1'"></app-vulnerabilities-drawer>
+              <app-vulnerabilities-drawer  [identifier]="'node-1'">
+                <ng-template #node1Template>
+                  <app-node1></app-node1>
+                </ng-template>
+                <ng-container *ngTemplateOutlet="node1Template"></ng-container>
+              </app-vulnerabilities-drawer>
             </div>
           </div>
         </div>
         <!-- Arrow -->
         <img ngSrc="/icons/arrow2.svg" width="58.5" height="24" alt="Arrow 2" />
         <!-- Node 3: Destination -->
-        <div class="px-[6.75px]" appNodePopoverTrigger (nodePopoverEnter)="onNodePopoverEnter($event, 2)"
+        <div class="px-[6.75px]" appNodePopoverTrigger (click)="onNodeClick(2)" (nodePopoverEnter)="onNodePopoverEnter($event, 2)"
           (nodePopoverLeave)="onNodePopoverLeave(2)">
           <div class="flex flex-col items-center ">
             <div
@@ -61,7 +74,12 @@
               class="fixed z-50 transition-opacity duration-200 bg-white rounded-[var(--radius-spikers-xxl,2rem)] shadow-spikers-lg"
               [ngClass]="'sm:block ' + (isMobile() ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[95vw]' : '')"
               [ngStyle]="isMobile() ? {} : { left: popovers[2].x() + 'px', top: popovers[2].y() + 'px' }">
-              <app-vulnerabilities-drawer [identifier]="'node-2'"></app-vulnerabilities-drawer>
+              <app-vulnerabilities-drawer [identifier]="'node-2'">
+                <ng-template #node2Template>
+                  <app-node2></app-node2>
+                </ng-template>
+                <ng-container *ngTemplateOutlet="node2Template"></ng-container>
+              </app-vulnerabilities-drawer>
             </div>
           </div>
         </div>
@@ -74,7 +92,7 @@
         <div class="px-[6.75px] mt-3">
           <div class="flex flex-col items-center justify-center min-w-[120px] gap-5">
             <!-- User A (top) -->
-            <div class="flex flex-col items-center mb-0" appNodePopoverTrigger
+            <div class="flex flex-col items-center mb-0" appNodePopoverTrigger (click)="onNodeClick(3)"
               (nodePopoverEnter)="onNodePopoverEnter($event, 3)" (nodePopoverLeave)="onNodePopoverLeave(3)">
               <div
                 class="relative flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
@@ -90,12 +108,18 @@
                 class="fixed z-50 transition-opacity duration-200 bg-white rounded-[var(--radius-spikers-xxl,2rem)] shadow-spikers-lg"
                 [ngClass]="'sm:block ' + (isMobile() ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[95vw]' : '')"
                 [ngStyle]="isMobile() ? {} : { left: popovers[3].x() + 'px', top: popovers[3].y() + 'px' }">
-                <app-vulnerabilities-drawer [identifier]="'node-3'"></app-vulnerabilities-drawer>
+
+                <app-vulnerabilities-drawer [identifier]="'node-3'">
+                  <ng-template #node3Template>
+                   <app-node3></app-node3>
+                  </ng-template>
+                  <ng-container *ngTemplateOutlet="node3Template"></ng-container>
+                </app-vulnerabilities-drawer>
               </div>
             </div>
 
             <!-- User B (bottom) -->
-            <div class="flex flex-col items-center mt-0" appNodePopoverTrigger
+            <div class="flex flex-col items-center mt-0" appNodePopoverTrigger (click)="onNodeClick(4)"
               (nodePopoverEnter)="onNodePopoverEnter($event, 4)" (nodePopoverLeave)="onNodePopoverLeave(4)">
               <div
                 class="relative flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
@@ -112,7 +136,13 @@
                 class="fixed z-50 transition-opacity duration-200 bg-white rounded-[var(--radius-spikers-xxl,2rem)] shadow-spikers-lg"
                 [ngClass]="'sm:block ' + (isMobile() ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[95vw]' : '')"
                 [ngStyle]="isMobile() ? {} : { left: popovers[4].x() + 'px', top: popovers[4].y() + 'px' }">
-                <app-vulnerabilities-drawer [identifier]="'node-4'"></app-vulnerabilities-drawer>
+
+                <app-vulnerabilities-drawer [identifier]="'node-4'">
+                  <ng-template #node4Template>
+                    <app-node4></app-node4>
+                  </ng-template>
+                  <ng-container *ngTemplateOutlet="node4Template"></ng-container>
+                </app-vulnerabilities-drawer>
               </div>
             </div>
           </div>
