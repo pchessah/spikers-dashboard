@@ -19,8 +19,7 @@
                 class="absolute -top-1 -right-1" />
             </div>
             <span class="text-xs text-[var(--color-spikers-soft-grey)] mt-1 font-semibold">Loremipsumm</span>
-            {{popovers[0].show() | json}}
-            <br>
+
             <div *ngIf="popovers[0].show()"
             class="fixed z-50 transition-opacity duration-200 bg-white rounded-[var(--radius-spikers-xxl,2rem)] shadow-spikers-lg"
             [ngClass]="'sm:block ' + (isMobile() ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-[95vw]' : '')"
