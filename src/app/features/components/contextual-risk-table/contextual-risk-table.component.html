@@ -10,7 +10,7 @@
       <tbody>
         <tr><td colspan="2" class="p-0"><div class="border-b border-[var(--color-spikers-grey-bg)]"></div></td></tr>
         @for (row of paginatedData(); track row; let i = $index) {
-          <tr class="align-top border-b border-[var(--color-spikers-grey-bg)]" [class.border-b-0]="i === paginatedData().length - 1">
+          <tr class="align-top border-b border-[var(--color-spikers-grey-bg)] cursor-pointer hover:bg-gray-50 transition" [class.border-b-0]="i === paginatedData().length - 1" (click)="onRowClick(row)">
             <!-- Asset column -->
             <td class="py-4 px-2.5">
               <div class="flex items-center gap-4">
@@ -59,3 +59,26 @@
     </table>
   </div>
 </div>
+
+<p-drawer  [(visible)]="visible" position="right">
+  <ng-container *ngIf="selectedRow">
+    <div class="p-4">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-spikers-blue-bg)]">
+          <img ngSrc="{{ selectedRow.icon }}" width="24" height="24" alt="Asset Icon" />
+        </div>
+        <div class="flex flex-col">
+          <span class="text-spikers-xs3 font-semibold text-[var(--color-spikers-soft-grey)]">{{ selectedRow.assetName }}</span>
+          <span class="text-spikers-xxxs">{{ selectedRow.ip }}</span>
+        </div>
+      </div>
+      <div class="mb-2">
+        <span class="font-bold">Contextual Risk: </span>
+        <span class="rounded-full py-1 px-4 gap-2.5 text-spikers-sm2 contextual-risk-pill font-bold"
+          [ngStyle]="{ 'background-color': riskBgColor(selectedRow.contextualRisk), color: riskTextColor(selectedRow.contextualRisk) }">
+          {{ selectedRow.contextualRisk }}
+        </span>
+      </div>
+    </div>
+  </ng-container>
+</p-drawer>

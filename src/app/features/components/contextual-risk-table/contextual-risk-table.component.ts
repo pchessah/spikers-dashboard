@@ -1,19 +1,22 @@
 import { Component } from '@angular/core';
 import { AssetService } from '../../services/asset.service';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { DrawerModule } from 'primeng/drawer';
 
 @Component({
   selector: 'app-contextual-risk-table',
-  imports: [CommonModule, NgOptimizedImage],
+  imports: [CommonModule, NgOptimizedImage, DrawerModule],
   templateUrl: './contextual-risk-table.component.html',
   styleUrl: './contextual-risk-table.component.scss'
 })
 export class ContextualRiskTableComponent {
+  visible = false;
   data;
   paginatedData;
   page;
   totalPages;
   pageSize;
+  selectedRow: any = null;
 
   constructor(private assetService: AssetService) {
     this.data = this.assetService.getAssetsSignal();
@@ -49,5 +52,10 @@ export class ContextualRiskTableComponent {
 
   min(a: number, b: number) {
     return a < b ? a : b;
+  }
+
+  onRowClick(row: any) {
+    this.selectedRow = row;
+    this.visible = true;
   }
 }
