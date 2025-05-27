@@ -10,7 +10,7 @@
       <tbody>
         <tr><td colspan="2" class="p-0"><div class="border-b border-[var(--color-spikers-grey-bg)]"></div></td></tr>
         @for (row of paginatedData(); track row; let i = $index) {
-          <tr class="align-top border-b border-[var(--color-spikers-grey-bg)] cursor-pointer hover:bg-gray-50 transition" [class.border-b-0]="i === paginatedData().length - 1" (click)="onRowClick(row)">
+          <tr class="align-top border-b border-[var(--color-spikers-grey-bg)] cursor-pointer hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-primary-500" [class.border-b-0]="i === paginatedData().length - 1" (click)="onRowClick(row)" tabindex="0" (keydown.enter)="onRowClick(row)" (keydown.space)="onRowClick(row)" role="row" [attr.aria-selected]="selectedRow === row">
             <!-- Asset column -->
             <td class="py-4 px-2.5">
               <div class="flex items-center gap-4">

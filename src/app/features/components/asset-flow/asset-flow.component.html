@@ -9,8 +9,8 @@
       <!-- Main flow nodes -->
       <div class="flex flex-row items-center gap-0 w-full justify-center">
         <!-- Node 1: Source -->
-        <div class="px-[6.75px]" appNodePopoverTrigger (click)="onNodeClick(0)" (nodePopoverEnter)="onNodePopoverEnter($event, 0)"
-          (nodePopoverLeave)="onNodePopoverLeave(0)">
+        <div class="px-[6.75px] focus:outline-none focus:ring-2 focus:ring-primary-500" appNodePopoverTrigger (click)="onNodeClick(0)" (nodePopoverEnter)="onNodePopoverEnter($event, 0)"
+          (nodePopoverLeave)="onNodePopoverLeave(0)" tabindex="0" role="button" aria-pressed="false" (keydown.enter)="onNodeClick(0)" (keydown.space)="onNodeClick(0)">
           <div class="flex flex-col items-center ">
             <div
               class="relative flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-contextual-risk-bg)]">
@@ -37,8 +37,8 @@
         <!-- Arrow -->
         <img ngSrc="/icons/arrow2.svg" width="58.5" height="24" alt="Arrow 2" />
         <!-- Node 2: Processing -->
-        <div class="px-[6.75px]" appNodePopoverTrigger (click)="onNodeClick(1)" (nodePopoverEnter)="onNodePopoverEnter($event, 1)"
-          (nodePopoverLeave)="onNodePopoverLeave(1)">
+        <div class="px-[6.75px] focus:outline-none focus:ring-2 focus:ring-primary-500" appNodePopoverTrigger (click)="onNodeClick(1)" (nodePopoverEnter)="onNodePopoverEnter($event, 1)"
+          (nodePopoverLeave)="onNodePopoverLeave(1)" tabindex="0" role="button" aria-pressed="false" (keydown.enter)="onNodeClick(1)" (keydown.space)="onNodeClick(1)">
           <div class="flex flex-col items-center ">
             <div
               class="flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
@@ -61,8 +61,8 @@
         <!-- Arrow -->
         <img ngSrc="/icons/arrow2.svg" width="58.5" height="24" alt="Arrow 2" />
         <!-- Node 3: Destination -->
-        <div class="px-[6.75px]" appNodePopoverTrigger (click)="onNodeClick(2)" (nodePopoverEnter)="onNodePopoverEnter($event, 2)"
-          (nodePopoverLeave)="onNodePopoverLeave(2)">
+        <div class="px-[6.75px] focus:outline-none focus:ring-2 focus:ring-primary-500" appNodePopoverTrigger (click)="onNodeClick(2)" (nodePopoverEnter)="onNodePopoverEnter($event, 2)"
+          (nodePopoverLeave)="onNodePopoverLeave(2)" tabindex="0" role="button" aria-pressed="false" (keydown.enter)="onNodeClick(2)" (keydown.space)="onNodeClick(2)">
           <div class="flex flex-col items-center ">
             <div
               class="flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
@@ -92,7 +92,7 @@
           <div class="flex flex-col items-center justify-center min-w-[120px] gap-5">
             <!-- User A (top) -->
             <div class="flex flex-col items-center mb-0" appNodePopoverTrigger (click)="onNodeClick(3)"
-              (nodePopoverEnter)="onNodePopoverEnter($event, 3)" (nodePopoverLeave)="onNodePopoverLeave(3)">
+              (nodePopoverEnter)="onNodePopoverEnter($event, 3)" (nodePopoverLeave)="onNodePopoverLeave(3)" tabindex="0" role="button" aria-pressed="false" (keydown.enter)="onNodeClick(3)" (keydown.space)="onNodeClick(3)" class="focus:outline-none focus:ring-2 focus:ring-primary-500">
               <div
                 class="relative flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
                 <img ngSrc="/icons/server.svg" width="26" height="26" alt="Server" />
@@ -119,7 +119,7 @@
 
             <!-- User B (bottom) -->
             <div class="flex flex-col items-center mt-0" appNodePopoverTrigger (click)="onNodeClick(4)"
-              (nodePopoverEnter)="onNodePopoverEnter($event, 4)" (nodePopoverLeave)="onNodePopoverLeave(4)">
+              (nodePopoverEnter)="onNodePopoverEnter($event, 4)" (nodePopoverLeave)="onNodePopoverLeave(4)" tabindex="0" role="button" aria-pressed="false" (keydown.enter)="onNodeClick(4)" (keydown.space)="onNodeClick(4)" class="focus:outline-none focus:ring-2 focus:ring-primary-500">
               <div
                 class="relative flex items-center justify-center w-[53px] h-[53px] rounded-full bg-[var(--color-spikers-blue-bg)]">
                 <img ngSrc="/icons/server.svg" width="26" height="26" alt="Server" />
