@@ -4,5 +4,18 @@
 </div>
 
 <p-drawer  [(visible)]="visible" position="right">
-  <div [innerHTML]="info"></div>
+ @switch (currentNode) {
+  @case (0) {
+    <app-node-initial></app-node-initial>
+  }
+  @case (1) {
+    <app-node1></app-node1>
+  }
+  @case (2) {
+    <app-node2></app-node2>
+  }
+  @case (3) {
+    <app-node3></app-node3>
+  }
+}
 </p-drawer>

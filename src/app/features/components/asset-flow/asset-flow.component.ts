@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, signal, ViewChild, TemplateRef } from '@angular/core';
+import { Component, Output, EventEmitter, signal } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ASSET_FLOW_NODES, ASSET_FLOW_EDGES, ASSET_FLOW_SHIELDS, AssetFlowNode, AssetFlowEdge, AssetFlowShield } from '../../data';
 import { VulnerabilitiesDrawerComponent } from '../vulnerabilities-drawer/vulnerabilities-drawer.component';
@@ -8,6 +8,7 @@ import { Node3Component } from "../node3/node3.component";
 import { Node2Component } from "../node2/node2.component";
 import { Node1Component } from "../node1/node1.component";
 import { NodeInitialComponent } from '../node-initial/node-initial.component';
+
 @Component({
   selector: 'app-asset-flow',
   standalone: true,
@@ -29,7 +30,6 @@ export class AssetFlowComponent {
   nodes: AssetFlowNode[] = ASSET_FLOW_NODES;
   edges: AssetFlowEdge[] = ASSET_FLOW_EDGES;
   altText = 'Lorem "ipsum"';
-
 
   popovers = this.nodes.map(() => ({
     show: signal(false),
